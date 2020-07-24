@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.Date;
+
 @Controller
 public class HtmlBoardController {
 
@@ -78,9 +80,46 @@ public class HtmlBoardController {
 
         return "htmlRead";
     }
+
+    @GetMapping("/regtestpage")
+    public String registerTestPage() {
+        logger.info("registerTestPage()");
+
+        return "form/registerForm";
+    }
+
+    @PostMapping("/regtest")
+    public String registerTest(String userId_wd, String passwd) {
+        logger.info("registerTest()");
+
+        logger.info("userId = " + userId_wd);
+        logger.info("passwd = " + passwd);
+
+        return "form/success";
+    }
+
+    @GetMapping("/getRegTest")
+    public String getRegTest(String userId, Date date) {
+        logger.info("getRegTest()");
+        logger.info("userId = " + userId);
+        logger.info("date = " + date);
+
+        return "form/success";
+    }
 }
 
 // MusicController를 하나 만든다.
 // Controller 기능으로는 음악 재생, 메뉴 보기, 녹음
 // 이와 관련된 HTML 및 Controller 구성을 직접 해보자!
 // (음악이 재생, 녹음 등등이 될 필요는 없다)
+
+// DB 접속하기
+// mysql -u bitai -p
+
+// 계정이 사라진 사람들은 아래과정 진행
+// sudo mysql -u root -p
+// 계정 비밀번호 입력함
+// create user bitai@
+//
+//
+//

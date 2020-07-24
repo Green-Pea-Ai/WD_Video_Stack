@@ -1,8 +1,13 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Music;
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +16,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
+//
+//
+//
+
+// @RestController - json 씀, Controller는 html 파싱할 때 씀
+// 코딩 목적에 적절한 컨트롤러를 써야 코드 양을 줄일 수 있다.
 @RestController
 @RequestMapping("musics")
 public class MusicController {
@@ -53,19 +70,135 @@ public class MusicController {
     }
 
     @GetMapping("/menu")
-    public String musicMenu() {
+    public ModelAndView musicMenu() {
         log.info("musicMenu()");
 
-        return "music/musicMenu";
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("music/musicMenu");
+
+        return modelAndView;
     }
 
     @GetMapping("/record")
-    public String musicRecord() {
+    public ModelAndView musicRecord() {
         log.info("musicRecord()");
 
-        return "music/musicRecord";
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("music/musicRecord");
+
+        return modelAndView;
     }
 
+    @GetMapping("/titles")
+    public List<Music> musicTitles() {
+        log.info("musicTitles()");
+
+        List<Music> list = new ArrayList<>();
+
+        Music music1 = new Music();
+        list.add(music1);
+
+        Music music2 = new Music();
+        list.add(music2);
+
+        return list;
+    }
+
+    @GetMapping("/artists")
+    public Map<String, Music> musicArtists() {
+        log.info("musicArtists()");
+
+        Map<String, Music> map = new HashMap<String, Music>();
+
+        Music music1 = new Music();
+        map.put("MC 홍길동", music1);
+
+        Music music2 = new Music();
+        map.put("ABC", music2);
+
+        return map;
+    }
+
+    @GetMapping("/resptest")
+    // 파이썬 등 데이터 주고받을 때 중요하다.
+    public ResponseEntity<Void> musicRespTest() {
+        log.info("musicRespTest");
+
+        // Controller에서 json 처리를 하려면
+        // ResponseEntity(legacy임)를 쓰면 된다
+        // RestController는 html 핸들링 못해서
+        // ModelAndView가 필요하다.
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
+    @GetMapping("/respstring")
+    public ResponseEntity<String> musicRespString() {
+        log.info("musicRespString()");
+
+        // 음악 재생 버튼 클릭시 나오는 페이지와 같은 기능을 한다.
+        return new ResponseEntity<String>(
+                "Success", HttpStatus.OK
+        );
+    }
+
+
+    @GetMapping("/respclass")
+    public ResponseEntity<Music> musicRespClass() {
+        log.info("musicRespClass()");
+
+        Music music = new Music();
+
+        return new ResponseEntity<Music>(music, HttpStatus.OK);
+    }
+
+    @GetMapping("/resplist")
+    public ResponseEntity<List<Music>> musicRespList() {
+        log.info("musicRespList");
+
+        List<Music> list = new ArrayList<Music>();
+
+        Music music1 = new Music();
+        list.add(music1);
+
+        Music music2 = new Music();
+        list.add(music2);
+
+        return new ResponseEntity<List<Music>>(list, HttpStatus.OK);
+    }
+
+    // 이미지는 0~255를 사용해 처리
+    // 2^8=256 8비트 1바이트가 이미지 포맷이다
+    // byte 배열 형식으로 이미지를 처리함
+    @GetMapping("respfile")
+    public ResponseEntity<byte[]> musicImgFile() throws Exception {
+        log.info("musicImgFile()");
+
+        InputStream in = null;
+        ResponseEntity<byte[]> entity = null;
+
+        try {
+            HttpHeaders headers = new HttpHeaders();
+
+            in = new FileInputStream("/home/bitai/proj/PythonWorkshop/test_image_1.jpg");
+            headers.setContentType(MediaType.IMAGE_JPEG);
+
+            // 그래들 파일에 추가
+            // compile group: 'org.apache.commons', name: 'commons-io', version: '1.3.2'
+            entity = new ResponseEntity<byte[]>(
+                    IOUtils.toByteArray(in),
+                    headers,
+                    HttpStatus.CREATED
+            );
+        } catch(Exception e) {
+            e.printStackTrace();
+            entity = new ResponseEntity<byte[]>(HttpStatus.BAD_REQUEST);
+        } finally {
+            // throws Exception을 써줘야 오류가 없어짐
+            in.close();
+        }
+
+        return entity;
+    }
 
 
 
