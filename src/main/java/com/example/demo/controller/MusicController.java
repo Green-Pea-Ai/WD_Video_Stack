@@ -23,9 +23,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//
-//
-//
+// @Controller는 HTML 핸들링에 특화되어 있으므로
+// 데이터를 처리하고자 할 경우 ResponseEntity를 활용해줘야 한다.
+// @RestController는 json 형식으로 데이터 처리에 특화되어 있으므로
+// HTML을 처리하고자 할 경우 ModelAndView를 활용해야 한다.
 
 // @RestController - json 씀, Controller는 html 파싱할 때 씀
 // 코딩 목적에 적절한 컨트롤러를 써야 코드 양을 줄일 수 있다.
@@ -166,8 +167,8 @@ public class MusicController {
         return new ResponseEntity<List<Music>>(list, HttpStatus.OK);
     }
 
-    // 이미지는 0~255를 사용해 처리
-    // 2^8=256 8비트 1바이트가 이미지 포맷이다
+    // 이미지는 0~255의 숫자를 사용해 처리를 함
+    // 2^8=256 8비트, 즉 1바이트가 이미지 포맷의 크기다.
     // byte 배열 형식으로 이미지를 처리함
     @GetMapping("respfile")
     public ResponseEntity<byte[]> musicImgFile() throws Exception {

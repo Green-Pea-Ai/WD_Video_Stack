@@ -119,7 +119,7 @@ public class HtmlBoardController {
 // 계정이 사라진 사람들은 아래과정 진행
 // sudo mysql -u root -p
 // 계정 비밀번호 입력함
-// create user bitai@
-//
-//
-//
+// create user bitai@localhost identified by '456123';
+// grant all privileges on testdb.* to bitai@localhost identified by '456123';
+// exit
+// mysql -u bitai -p
