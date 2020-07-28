@@ -1,11 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="UTF-8">
     <title>Vue Index Page</title>
+    <link href="css/vueMain.css" rel="stylesheet">
 </head>
+
 <body>
     <h2>Vue Index Page이다.</h2>
+    <div id="app">
+        <h3>{{ message }}</h3>
+        <!-- Vue 객체에 있는 message의 길이를 산출 -->
+        <p>{{ message.length }}</p>
+        <p>{{ list[2] }}</p>
+        <p>{{ list[num] }}</p>
+
+        <ol>
+            <!-- Vue 객체가 가지고 있는 list에서 정보를 뽑아와서
+                item에 설정하고 각각의 item들을 출력한다. -->
+            <li v-for="item in list">{{ item }}</li>
+        </ol>
+
+        <button v-on:click="handleClick">Click</button>
+        <input v-model="initMsg"><br><br>
+
+        <p>{{ initMsg }}</p>
+        <button v-on:click="show=!show">Change</button>
+        <transition>
+            <p v-if="show">Show Time!</p>
+        </transition>
+        <p>{{ count }}번 클릭했다!</p>
+        <button v-on:click="increment">Count</button>
+        <button v-on:click="isActive=!isActive">
+            Change Mode
+        </button>
+
+    </div>
     <script src = "https://cdn."></script>
 </body>
+
 </html>
