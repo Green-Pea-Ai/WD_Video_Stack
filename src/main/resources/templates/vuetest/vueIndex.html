@@ -19,6 +19,7 @@
         <ol>
             <!-- Vue 객체가 가지고 있는 list에서 정보를 뽑아와서
                 item에 설정하고 각각의 item들을 출력한다. -->
+            <h3>item이다.</h3>
             <li v-for="item in list">{{ item }}</li>
         </ol>
 
@@ -63,7 +64,7 @@
         <p>HP: {{ characterHp }}</p>
         <p>ATK: {{ characterAtk }}</p>
         <p>DEF: {{ characterDef }}</p>
-        <p>MONEY: {{ money }}</p>
+        <p>Money: {{ money }}</p>
 
         <!--
         이름
@@ -73,7 +74,7 @@
         <!--keypress : 키 누름 감지-->
         <button v-on:click="addMonster">Add Monster</button>
         <button v-on:click="addManyMonster">Add Many Monster</button>
-        <button v-on:click="ThorHammer">Thor's Hammer</button>
+        <button v-on:keypress="ThorHammer">Thor's Hammer</button>
 
         <!-- ol: 숫자넣기, ul: 동글뱅이 -->
         <ul>
@@ -154,6 +155,13 @@
         <p>{{ itemBook[0].price }}</p>
         <p>{{ itemBook[0].effect.desc }}</p>
         <p>{{ itemBook[0].effect.amount }}</p>
+        <p>{{ shopListValue }}</p>
+
+        <!--
+        <p>{{ shopListValue[0] }}</p>
+        <p>{{ shopListValue[1] }}</p>
+        <p>{{ shopListValue[2] }}</p>
+        -->
         <!-- 상점 기능 구현에서 제일 중요한 것들을 추려보자!
             1. 게임내에 소지금에 대한 정보가 필요하다.
             2. 몹을 잡을때마다 일정 부분 획득할 수 있게 만들어줘야 한다.
@@ -162,13 +170,62 @@
             5. 구매에 대한 계산
             6. 판매에 대한 계산 -->
         <h3>상점</h3>
-        <label>
-            <input type="checkbox" v-model="shopView"> Shopping!
-        </label>
-        <transition>
-            <p v-if="shopView">감사합니다.</p>
-        </transition>
 
+        <label>
+            <input type="checkbox" v-model="myInven" v-on:click="test()"> My Inventory!
+        </label>
+        <!--<transition>
+            <p v-if="myInven">내 인벤토리 리스트들을 보여줘야 한다.</p>
+        </transition>-->
+        <table border="1">
+            <tr v-if="myInven">
+                <th align="center" width="20">No</th>
+                <th align="center" width="80">Name</th>
+                <th align="center" width="320">Effect</th>
+            </tr>
+            <!--<p v-if="shopView">상점의 물건들을 보여줘야 한다.</p>-->
+            <!--v-if, v-for, idx 등 모두 vue의 객체를 갖다쓰는 것임-->
+            <tr v-if="myInven" v-for="(list, idx) in myInventory"
+                v-bind:key="list.itemName">
+                <th align="center" width="20">{{ idx + 1 }}</th>
+                <th align="center" width="80">{{ list.itemName }}</th>
+                <th align="center" width="320">{{ list.effect.desc }}</th>
+            </tr>
+        </table>
+
+        <label>
+            <input type="checkbox" v-model="shopView" v-on:click="shuffleShopList()">Shop list!
+        </label>
+
+        <button v-on:click="calcBuy()">Buy!</button>
+        <table border="1">
+            <tr v-if="shopView">
+                <th align="center" width="20">No</th>
+                <th align="center" width="80">Name</th>
+                <th align="center" width="80">Price</th>
+                <th align="center" width="320">Effect</th>
+                <th align="center" width="40">Buy</th>
+            </tr>
+        <!--<p v-if="shopView">상점의 물건들을 보여줘야 한다.</p>-->
+            <!--v-if, v-for, idx 등 모두 vue의 객체를 갖다쓰는 것임-->
+            <tr v-if="shopView" v-for="(list, idx) in shopList"
+                v-bind:key="list.itemName">
+                <th align="center" width="20">{{ idx + 1 }}</th>
+                <th align="center" width="80">{{ list.itemName }}</th>
+                <th align="center" width="80">{{ list.price }}</th>
+                <th align="center" width="320">{{ list.effect.desc }}</th>
+                <th align="center" width="40">
+                    <label>
+                        <!--value를 안주면 체크할때 여러개의 체크박스가 모두 체크 된다.
+                        value 값을 각각 줘야 개별 선택이 가능함-->
+                        <!--v-model말고 model을 써도 되지만 배열 값을 못찾는다-->
+                        <input type="checkbox"
+                               v-model="shopListValue"
+                                v-bind:value="idx">
+                    </label>
+                </th>
+            </tr>
+        </table>
     </div>
     <script src="https://unpkg.com/vuex@2.0.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10">
@@ -221,6 +278,7 @@
                     { itemName: 'Sword', price: 1000000, effect: { desc: "weapon", atk: 100} },
                     { itemName: 'Iron Sword', price: 20000000, effect: { desc: "weapon", atk: 200} }
                 ],
+                shopList: [],
                 monsterName: 'Chimera',
                 characterName: '',
                 characterLv: 1,
@@ -238,7 +296,10 @@
                 optValue: '',
                 optArrValue: [],
                 money: 500,
-                shopView: false
+                shopView: false,
+                myInven: false,
+                shopListValue: [],
+                myInventory: []
             },
             methods: {
                 handleClick: function(event) {
@@ -312,6 +373,62 @@
                 omnislash: function(index) {
                     // alert('겁나 아픈거')
                     this.monster[index].hp = parseInt(this.monster[index].hp - this.characterAtk * 20)
+                },
+                // 테코
+                test: function() {
+                    alert('check my inven!')
+                },
+                // 체크박스를 체크하지 않는 이상 데이터가 변하지 않게 한다?
+                // 업데이트 할때 멈추는 현상 개선(몬스터 추가 시도 등)
+                shuffleShopList: function() {
+                    // !는 not 연산이므로 어떤 결과든 부정함
+                    if(!this.shopView) {
+                        this.shopListValue = []
+                    }
+
+                    // 상점에 새로운 아이템을 갱신하도록 만드는 위치
+                    for(var i = 0; i < 10; i++) {
+                        var randIdx = Math.floor(Math.random() * this.itemBook.length)
+                        this.shopList[i] = this.itemBook[randIdx]
+                    }
+                },
+                calcBuy: function() {
+                    var tmpSum = 0
+                   // for each문으로 써도 됨
+                   // 구매하려고 하는 물건의 인덱스 번호를 가지고 있음
+                   // 가장 외부의 for Loop는 구매하려는 물건의 개수
+                   // alert('calcBuy()')
+                   console.log('calcBuy(): ' + this.shopListValue.length)
+                   console.log('shopList len: ' + this.shopList.length)
+                   for(var i = 0; i < this.shopListValue.length; i++) {
+                       console.log(this.shopListValue[i])
+                       // 가장 내부의 for Loop는 상점에 있는 물건의 개수
+                       for(var j = 0; j < this.shopList.length; j++) {
+                           console.log('inner loop')
+                           if(this.shopListValue[i] == j) {
+                               console.log('match!')
+                               tmpSum += this.shopList[j].price
+                               break
+                           }
+                       }
+                   }
+
+                   if(this.money - tmpSum >= 0) {
+                       this.money -= tmpSum
+
+                       // 돈 계산이 끝난 이후에 내용을 추가해주도록 한다.
+                       // 필요한 데이터들은 this.shopList에 있으며
+                       // 또한 각각의 인덱스들은 shopListValue에서 얻는다.
+                       for(var i = 0; i < this.shopListValue.length; i++) {
+                           // 계속 누적할 목적으로 push를 사용해서 값을 누적하도록 했음
+                           this.myInventory.push({
+                                itemName: this.shopList[this.shopListValue[i]].itemName,
+                                effect: this.shopList[this.shopListValue[i]].effect
+                           })
+                       }
+                   } else {
+                       alert('돈없다')
+                   }
                 }
             },
 
