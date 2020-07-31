@@ -48,7 +48,7 @@ public class BoardController {
         // 동작하게 설계되어 있다.
         // DB에서 읽어온 정보
         model.addAttribute(
-                "list",
+                "list_wd",
                 service.list());
 
         // HTML 파일

@@ -7,11 +7,17 @@
 <script type="text/javascript"
         src="http://code.jquery.com/jquery-2.1.4.min.js">
 </script>
+<!--
+$("#board");는 id="board"와 연결되어있다.
+formObj.attr("action", "postRegister");의 postRegister는 포스트매핑의 /postRegister이다.
+(액션이라 / 안써줘도 잡아준다고 함)
+-->
 <script>
     $(document).ready(function() {
         var formObj = $("#board");
 
         $("#btnRegister").on("click", function() {
+
             formObj.attr("action", "postRegister");
             formObj.attr("method", "post");
             formObj.submit();
@@ -29,9 +35,13 @@
      th:object="$" 객체 링킹
      th:field="*" 객체에 있는 내부 멤버 링킹 -->
 
+th:action="@{register}는 크게 신경쓸 필요없는 요소이다.
+th:object="${board}"는 getRegister() Board의 board이다.
 <form id="board" action="board/success.html"
       th:action="@{register}"
       th:object="${board}" method="post">
+    
+    <!--field="*{title}은 Board의 title이다.-->
     <table>
         <tr>
             <td>Title</td>

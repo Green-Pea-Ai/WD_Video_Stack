@@ -17,13 +17,13 @@
             <th align="center" width="80">Writer</th>
             <th align="center" width="80">Regdate</th>
         </tr>
-        <tr th:if="${#lists.isEmpty(list)}">
+        <tr th:if="${#lists.isEmpty(list_wd)}">
             <td colspan="4">
                 List is Empty
             </td>
         </tr>
         <!-- foreach for(A : B) -->
-        <tr th:each="board: ${list}">
+        <tr th:each="board: ${list_wd}">
             <td align="center" th:text="${board.boardNo}">
                 ${board.boardNo}
             </td>
