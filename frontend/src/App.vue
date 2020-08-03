@@ -1,4 +1,10 @@
 <template>
+    <router-view/>
+</template>
+
+<!-- 주석 -->
+<!--
+<template>
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
@@ -17,3 +23,4 @@
   color #2c3e50
   margin-top 60px
 </style>
+-->
