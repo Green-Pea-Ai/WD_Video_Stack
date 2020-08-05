@@ -7,7 +7,7 @@
       <div id="header">
         <router-link :to="{ name: 'Home' }"
             class="nav-link" active-class="active">
-          home
+            Home..
         </router-link>
 
         <router-link :to="{ name: 'About' }"
@@ -69,6 +69,12 @@
         <b>random: {{ this.$store.getters.random }}</b><br>
         <input type="button" @click="randomNumber()" value="random"/><br>
 
+        <global-component v-bind:initial-counter="counter">
+        </global-component><br>
+
+        <local-component v-bind:num="value">
+        </local-component>
+        <button v-on:click="plus">Click</button><br>
       </div>
     </div>
 
@@ -79,15 +85,25 @@ import Vue from 'vue'
 /* eslint-disable no-unused-vars */
 import store from '../store'
 import cookies from 'vue-cookies'
+import GlobalComponent from '../components/GlobalComponent.vue'
+import LocalComponent from '../components/LocalComponent.vue'
+
+Vue.component(GlobalComponent.name, GlobalComponent)
 
 // cookies는 상태정보를 저장한다.
 Vue.use(cookies)
 
 export default {
+  components: {
+    'local-component': LocalComponent
+  },
+
   data: function () {
     return {
+      counter: 3,
       msg: 'Test',
       count: 7,
+      value: 1,
       list: function () {
         var list = []
         for (var i = 1; i < this.count; i += 2) {
@@ -133,6 +149,9 @@ export default {
     // commit은 내부에서 실행되며 비동기 처리가 가능하다.
     // 쓰레드의 동기, 비동기 처리를 알고 있어야 한다.
       this.$store.dispatch('generateRandomNumber')
+    },
+    plus: function () {
+      this.value++
     }
   },
   created: function () {

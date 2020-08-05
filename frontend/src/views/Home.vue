@@ -18,6 +18,12 @@
           class="nav-link" active-class="active">
         testttt
       </router-link>
+
+      <router-link :to="{ name: 'Todo' }"
+          class="nav-link"
+          active-class="active">
+        Todo exam
+      </router-link>
     </div>
 
     <h2>This is an Home Page</h2>
