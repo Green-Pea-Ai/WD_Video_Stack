@@ -18,9 +18,11 @@ export default {
   methods: {
     addTodo () {
       if (this.newTodoItem !== '') {
+        var value = this.newTodoItem && this.newTodoItem.trim()
         // trim()은 공백제거
-        this.newTodoItem.trim()
-        console.log('addTodo')
+        // this.newTodoItem.trim()
+        console.log('addTodo: ' + value)
+        this.$emit('addTodo', value)
         this.clearInput()
       }
     },
@@ -37,5 +39,4 @@ export default {
   div {
     background-color: #E27676;
   }
-
 </style>

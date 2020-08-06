@@ -18,14 +18,16 @@
 export default {
   data () {
     return {
-      todoItems: ['item1', 'item2', 'item3']
+      // todoItems: ['item1', 'item2', 'item3']
     }
   },
+  props: ['todoItems'],
   methods: {
     removeTodo (todoItem, idx) {
       console.log('removeTodo')
       // splice() : 배열에서 값 추출
-      this.todoItems.splice(idx, 1)
+      // this.todoItems.splice(idx, 1)
+      this.$emit('removeTodo', todoItem, idx)
     }
   }
 }
