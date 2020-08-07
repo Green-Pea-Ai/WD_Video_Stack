@@ -1,14 +1,12 @@
 <template>
   <div>
     <h3>Todo Input</h3>
-    <input type="text" v-model="newTodoItem"
-        v-on:keypress.enter="addTodo">
+    <input type="text" v-model="newTodoItem" v-on:keypress.enter="addTodo">
     <button v-on:click="addTodo">Add</button>
   </div>
 </template>
 
 <script>
-
 export default {
   data () {
     return {
@@ -21,7 +19,7 @@ export default {
         var value = this.newTodoItem && this.newTodoItem.trim()
         // trim()은 공백제거
         // this.newTodoItem.trim()
-        console.log('addTodo: ' + value)
+        console.log('addTodo')
         this.$emit('addTodo', value)
         this.clearInput()
       }

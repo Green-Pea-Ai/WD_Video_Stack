@@ -5,14 +5,11 @@
 </template>
 
 <script>
-
 export default { }
-
 </script>
 
 <style scoped>
   div {
     background-color: #AFDCFA;
   }
-
 </style>

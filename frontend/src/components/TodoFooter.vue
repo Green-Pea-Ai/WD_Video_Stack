@@ -20,5 +20,4 @@ export default {
   div {
     background-color: #DBDBDB;
   }
-
 </style>
