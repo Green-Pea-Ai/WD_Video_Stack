@@ -4,6 +4,8 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Test from '../views/Test.vue'
 import Todo from '../views/Todo.vue'
+import FiveEyeGame from '../views/FiveEyeGame.vue'
+// Concave -> 식별이 어려워 FiveEyeGame으로 이름바꿈
 
 Vue.use(VueRouter)
 
@@ -31,6 +33,13 @@ const routes = [
     path: '/todo',
     name: 'Todo',
     component: Todo
+  },
+  {
+    path: '/FiveEyeGame',
+    name: 'FiveEyeGame',
+    components: {
+      default: FiveEyeGame
+    }
   }
 ]
 

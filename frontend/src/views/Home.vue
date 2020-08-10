@@ -24,6 +24,12 @@
           active-class="active">
         [Todo exam]
       </router-link>
+
+      <router-link :to="{ name: 'FiveEyeGame' }"
+          class="nav-link"
+          active-class="active">
+        FiveEyeGame
+      </router-link>
     </div>
 
     <h2>This is an Home Page</h2>
@@ -65,6 +71,12 @@ export default {
 <style scoped>
 div {
   border: 1px solid #ccc;
+}
+
+#header {
+  padding: 15px;
+  margin-bottom: 15px;
+  margin: 5px 5px;
 }
 
 img {

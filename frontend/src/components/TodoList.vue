@@ -2,7 +2,7 @@
   <div>
     <!-- <h3 class="monospace">Todo List</h3> -->
     <ul>
-      <h3>Todo List333</h3>
+      <h3>Todo List 333</h3>
       <todo-item v-for="todoItem in todoItems"
           v-bind:key="todoItem.id"
           v-bind:todoItem="todoItem"
@@ -99,7 +99,7 @@ export default {
     background-color: #C0FCC5;
   }
   .monospace {
-    font-family: "lucida Console", Courier, monospace;
+    font-family: "Lucida Console", Courier, monospace;
     text-decoration: underline;
   }
 </style>

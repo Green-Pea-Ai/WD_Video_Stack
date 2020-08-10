@@ -3,7 +3,7 @@
     <todo-header></todo-header>
     <todo-input v-on:addTodo="onAddTodo"></todo-input>
     <todo-filter></todo-filter>
-    <todo-list v-on:removeTodo="onRemoveTodo">
+    <todo-list v-on:removeTodo="onRemoveTodo"
               v-on:updateTodo="onEditTodo"
               v-on:toggleTodoStatus="onToggleTodoStatus"></todo-list>
     <todo-footer v-on:removeAll="onClearAll"></todo-footer>
@@ -25,6 +25,7 @@ import { mapActions } from 'vuex'
 export default {
   name: 'Todo',
   components: {
+    // GlobalComponent의 형식?
     'todo-header': TodoHeader,
     'todo-input': TodoInput,
     'todo-list': TodoList,
@@ -56,6 +57,8 @@ export default {
       this.save()
     },
     randomNumber () {
+      // this.$store.dispatch('generateRandomNumber')
+      // 인자가 없어도 액션에 전달이 된다
       this.generateRandomNumber()
     },
     onEditTodo (content, id) {
@@ -65,9 +68,6 @@ export default {
     onToggleTodoStatus (id) {
       this.toggleTodoStatus(id)
       this.save()
-    },
-    created () {
-      this.restore()
     }
     /* clearAll () {
       // this.todoItems = []
@@ -83,8 +83,13 @@ export default {
       store.dispatch('removeTodo', idx)
     } */
   },
+  created () {
+    // 새로고침 했을 때 데이터를 유지해주는 코드
+    this.restore()
+  },
   // computed : 간단한 연산을 도와주는 녀석, 많은 데이터 처리에는 적합하지 않다.
-  computed: {
+  computed () {
+    this.restore()
   }
 }
 </script>
