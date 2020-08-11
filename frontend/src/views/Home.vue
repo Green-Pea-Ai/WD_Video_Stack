@@ -28,7 +28,13 @@
       <router-link :to="{ name: 'FiveEyeGame' }"
           class="nav-link"
           active-class="active">
-        FiveEyeGame
+        [FiveEyeGame]
+      </router-link>
+
+      <router-link :to="{ name: 'BoardListPage' }"
+          class="nav-link"
+          active-class="active">
+        [Board!]
       </router-link>
     </div>
 

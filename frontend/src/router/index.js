@@ -7,6 +7,12 @@ import Todo from '../views/Todo.vue'
 import FiveEyeGame from '../views/FiveEyeGame.vue'
 // Concave -> 식별이 어려워 FiveEyeGame으로 이름바꿈
 
+// For Cafe Board
+import BoardListPage from '../views/BoardListPage.vue'
+import BoardRegisterPage from '../views/BoardRegisterPage.vue'
+import BoardModifyPage from '../views/BoardModifyPage.vue'
+import BoardReadPage from '../views/BoardReadPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -39,6 +45,34 @@ const routes = [
     name: 'FiveEyeGame',
     components: {
       default: FiveEyeGame
+    }
+  },
+  {
+    path: '/board',
+    name: 'BoardListPage',
+    components: {
+      default: BoardListPage
+    }
+  },
+  {
+    path: '/board/create',
+    name: 'BoardRegisterPage',
+    components: {
+      default: BoardRegisterPage
+    }
+  },
+  {
+    path: '/board/boardNo',
+    name: 'BoardReadPage',
+    components: {
+      default: BoardReadPage
+    }
+  },
+  {
+    path: '/board/boardNo/edit',
+    name: 'BoardModifyPage',
+    components: {
+      default: BoardModifyPage
     }
   }
 ]
