@@ -6,12 +6,28 @@ import {
   CLEAR_ALL,
   RESTORE,
   EDIT_TODO,
-  TOGGLE_TODO_STATUS
+  TOGGLE_TODO_STATUS,
+  FETCH_BOARD_LIST,
+  FETCH_BOARD
 } from './mutation-types'
 
 import axios from 'axios'
 
 export default {
+  fetchBoardList ({ commit }) {
+    return axios.get('http://localhost:7777/boards')
+      .then(res => {
+        commit(FETCH_BOARD_LIST, res.data)
+      })
+  },
+  fetchBoard ({ commit }, boardNo) {
+    console.log('fetchBoard ' + commit + ', boardNo = ' + boardNo)
+    return axios.get(`http://localhost:7777/boards/${boardNo}`)
+      .then(res => {
+        console.log('fetchBoard - res: ' + res.data)
+        commit(FETCH_BOARD, res.data)
+      })
+  },
   editTodo ({ commit }, payload) {
     commit(EDIT_TODO, payload)
   },

@@ -28,9 +28,10 @@ public class VueBoardController {
     @GetMapping("/{boardNo}")
     public ResponseEntity<VueBoard> read(
             @PathVariable("boardNo") Long boardNo) throws Exception {
-        log.info("read");
+        log.info("read()");
 
         VueBoard board = service.read(boardNo);
+        System.out.println("VueBoardController: " + board);
 
         return new ResponseEntity<VueBoard>(board, HttpStatus.OK);
     }
@@ -43,21 +44,26 @@ public class VueBoardController {
     }
 
     @PostMapping("")
-    public ResponseEntity<String> register(
+    public ResponseEntity<VueBoard> register(
             @Validated @RequestBody VueBoard board,
             UriComponentsBuilder uriBuilder) throws Exception {
-        log.info("register()");
+        log.info("POST register()");
 
         service.register(board);
 
         log.info("register board.getBoardNo() = " + board.getBoardNo());
 
+        /*
+        ResponseEntity<String> register로 테스트 할 때
         URI resourceURI = uriBuilder.path("boards/{boardNo}")
                 .buildAndExpand(board.getBoardNo())
                 .encode()
                 .toUri();
 
         return ResponseEntity.created(resourceURI).build();
+        */
+
+        return new ResponseEntity<>(board, HttpStatus.OK);
     }
 
     @DeleteMapping("/{boardNo}")
@@ -71,15 +77,16 @@ public class VueBoardController {
     }
 
     @PutMapping("/{boardNo}")
-    public ResponseEntity<Void> modify(
+    public ResponseEntity<VueBoard> modify(
             @PathVariable("boardNo") Long boardNo,
             @Validated @RequestBody VueBoard board) throws Exception {
-        log.info("modify()");
+        log.info("Put - modify()");
+        System.out.println(board);
 
         board.setBoardNo(boardNo);
         service.modify(board);
 
-        return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(board, HttpStatus.OK);
     }
 
 }

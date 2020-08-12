@@ -62,17 +62,25 @@ const routes = [
     }
   },
   {
-    path: '/board/boardNo',
+    // boardNo에 :를 넣으면 가변 페이지가 됨
+    path: '/board/:boardNo',
     name: 'BoardReadPage',
     components: {
       default: BoardReadPage
+    },
+    props: {
+      default: true
     }
   },
   {
-    path: '/board/boardNo/edit',
+    path: '/board/:boardNo/edit',
     name: 'BoardModifyPage',
     components: {
       default: BoardModifyPage
+    },
+    props: {
+      // boolean 모드가 됨, 이 옵션을 설정하면 route.params가 컴포넌트의 props에 자동 설정됨
+      default: true
     }
   }
 ]
