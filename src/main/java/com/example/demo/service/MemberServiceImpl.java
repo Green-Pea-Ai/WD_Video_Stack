@@ -98,7 +98,7 @@ public class MemberServiceImpl implements MemberService {
         for(Object[] valArr : valArrays) {
             Member mem = new Member();
 
-            mem.setUserNo((Long)valArr[0]);
+            mem.setUserNo((Long) valArr[0]);
             mem.setUserId((String) valArr[1]);
             mem.setUserPw((String) valArr[2]);
             mem.setUserName((String) valArr[3]);
@@ -113,6 +113,8 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public long countAll() throws Exception {
-        return 0;
+
+        return repository.count();
+        //return 0;
     }
 }

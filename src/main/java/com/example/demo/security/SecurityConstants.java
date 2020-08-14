@@ -7,7 +7,8 @@ public class SecurityConstants {
 
     // JWT 기본 토큰
     public static final String TOKEN_HEADER = "Authorization";
-    public static final String TOKEN_PREFIX = "JwTtEsT";
+    // JwTtEsT > Bearer
+    public static final String TOKEN_PREFIX = "Bearer ";
     public static final String TOKEN_TYPE = "JWT";
     public static final String TOKEN_ISSUER = "secure-api";
     public static final String TOKEN_AUDIENCE = "secure-app";

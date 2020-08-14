@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +14,9 @@ import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+// ???
+@JsonIgnoreProperties(value="hibernateLazyInitializer")
 
 // 아래 4개는 롬복기능
 @Getter
@@ -62,5 +66,4 @@ public class Member {
     public void clearAuth() {
         authList.clear();
     }
-
 }

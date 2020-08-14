@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.entity.Member;
 import com.example.demo.entity.MemberAuth;
 import com.example.demo.security.AuthUtil;
+import com.example.demo.service.MemberAuthService;
 import com.example.demo.service.MemberService;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,8 @@ public class MemberController {
     @Autowired
     private MemberService service;
 
-    // @Autowired
-    // private MemberAuthService authService;
+    @Autowired
+    private MemberAuthService authService;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -38,7 +39,7 @@ public class MemberController {
     // ================================================================================
     @PostMapping("")
     public ResponseEntity<Member> register(@Validated @RequestBody Member member)
-                                                           throws Exception {
+            throws Exception {
         log.info("member.getUserName(): " + member.getUserName());
 
         String inputPassword = member.getUserPw();
@@ -52,7 +53,7 @@ public class MemberController {
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @GetMapping
+    @GetMapping("")
     public ResponseEntity<List<Member>> list() throws Exception {
         return new ResponseEntity<>(service.list(), HttpStatus.OK);
     }
@@ -75,8 +76,8 @@ public class MemberController {
     @PutMapping("/{userNo}")
     public ResponseEntity<Member> modify(@PathVariable("userNo") Long userNo,
                                          @Validated @RequestBody Member member)
-                                                                throws Exception {
-        log.info("modify - memeber.getUserName(): " + member.getUserName());
+            throws Exception {
+        log.info("modify - member.getUserName(): " + member.getUserName());
         log.info("modify - userNo: " + userNo);
 
         member.setUserNo(userNo);
@@ -89,7 +90,7 @@ public class MemberController {
                     method = RequestMethod.POST,
                     produces = "text/plain;charset=UTF-8")
     public ResponseEntity<String> setupAdmin(@Validated @RequestBody Member member)
-                                                                throws Exception {
+                                                                    throws Exception {
         log.info("setupAdmin: member.getUserName(): " + member.getUserName());
         log.info("setupAdmin: service.countAll(): " + service.countAll());
 
@@ -112,14 +113,13 @@ public class MemberController {
 
     @GetMapping("/myinfo")
     public ResponseEntity<MemberAuth> getMyInfo(
-            @RequestHeader (name="Authrozation") String header) throws Exception {
+            @RequestHeader (name="Authorization") String header) throws Exception {
         Long userNo = AuthUtil.getUserNo(header);
         log.info("register userNo: " + userNo);
 
-        // MemberAuth auth = authService.read(userNo);
-        // log.info("auth: " + auth);
+        MemberAuth auth = authService.read(userNo);
+        log.info("auth: " + auth);
 
-        // return new ResponseEntity<>(auth, HttpStatus.OK);
-        return null;
+        return new ResponseEntity<>(auth, HttpStatus.OK);
     }
 }

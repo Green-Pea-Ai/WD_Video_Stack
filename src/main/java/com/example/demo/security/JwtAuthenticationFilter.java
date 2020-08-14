@@ -44,12 +44,12 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     }
 
     @Override
-    protected void successfulAuthentication(HttpServletRequest req,
-                                            HttpServletResponse res,
-                                            FilterChain chain,
-                                            Authentication authResult)
+    protected void successfulAuthentication(HttpServletRequest request,
+                                            HttpServletResponse response,
+                                            FilterChain filterChain,
+                                            Authentication authentication)
                                         throws IOException, ServletException {
-        CustomUser user = ((CustomUser) authResult.getPrincipal());
+        CustomUser user = ((CustomUser) authentication.getPrincipal());
 
         List<String> roles = user.getAuthorities()
                 .stream()
@@ -69,9 +69,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .claim("rol", roles)
                 .compact();
 
-        res.addHeader(SecurityConstants.TOKEN_HEADER,
+        response.addHeader(SecurityConstants.TOKEN_HEADER,
                 SecurityConstants.TOKEN_PREFIX + token);
-
-        super.successfulAuthentication(req, res, chain, authResult);
     }
 }

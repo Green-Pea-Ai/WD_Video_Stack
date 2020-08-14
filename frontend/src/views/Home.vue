@@ -3,19 +3,24 @@
     <!-- <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 
-    <div id="header">
+    <div id="header" v-if="isAuthorized">
+      <button id="login" @click="onCLickLogout">Logout</button>
+
       <router-link :to="{ name: 'Home' }"
-          class="nav-link" active-class="active">
+          class="nav-link"
+          active-class="active">
         [home]
       </router-link>
 
       <router-link :to="{ name: 'About' }"
-          class="nav-link" active-class="active">
+          class="nav-link"
+          active-class="active">
         [About Us]
       </router-link>
 
       <router-link :to="{ name: 'Test' }"
-          class="nav-link" active-class="active">
+          class="nav-link"
+          active-class="active">
         [testttt]
       </router-link>
 
@@ -36,13 +41,38 @@
           active-class="active">
         [Board!]
       </router-link>
-    </div>
 
     <h2>This is an Home Page</h2>
       <div id="app">
         {{ message }}<br>
       </div>
 
+      <div>
+        <br><span>{{ myinfo.auth }}계정, 접속을 환영합니다.</span>
+      </div>
+    </div>
+
+    <div id="header" v-else>
+      <button id="login" @click="$router.push('LoginPage')">
+        Login
+      </button>
+
+      <button id="login" @click="$router.push('AdminSetupPage')">
+        Register Admin
+      </button>
+
+      <router-link :to="{ name: 'Home' }"
+          class="nav-link"
+          active-class="active">
+        [Home]
+      </router-link>
+
+      <router-link :to="{ name: 'About' }"
+          class="nav-link"
+          active-class="active">
+        [About Us]
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -57,9 +87,11 @@
 
 import store from '../store'
 import Vue from 'vue'
-import cookies from 'vue-cookies'
+// import cookies from 'vue-cookies'
 
-Vue.use(cookies)
+import { mapState, mapGetters, mapActions } from 'vuex'
+
+// Vue.use(cookies)
 
 export default {
   name: 'Home',
@@ -67,6 +99,18 @@ export default {
     return {
       message: 'Vue Test Message'
     }
+  },
+  methods: {
+    onClickLogout () {
+      this.logout()
+      alert('Success Logout')
+      this.$router.push({ name: 'Home' })
+    },
+    ...mapActions(['logout'])
+  },
+  computed: {
+    ...mapState(['myinfo']),
+    ...mapGetters(['isAuthorized'])
   },
   components: {
     // HelloWorld
@@ -95,4 +139,10 @@ img {
   margin-right: auto;
 }
 
+#login {
+  background-color: #567A4B;
+  color: #ffffff;
+  font-weight: bold;
+  float: right;
+}
 </style>
