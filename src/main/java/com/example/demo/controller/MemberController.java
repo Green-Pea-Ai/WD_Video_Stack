@@ -98,6 +98,7 @@ public class MemberController {
             String inputPassword = member.getUserPw();
             member.setUserPw(passwordEncoder.encode(inputPassword));
 
+            // 암호 암호화하는 곳(인크립션, 디크립션)
             member.setJob("Admin");
 
             service.setupAdmin(member);

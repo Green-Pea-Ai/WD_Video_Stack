@@ -1,5 +1,13 @@
 package com.example.demo.security;
 
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import javax.servlet.FilterChain;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -10,15 +18,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     private final AuthenticationManager authenticationManager;
@@ -26,29 +25,25 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     public JwtAuthenticationFilter(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
 
+        // 인자로 들어온 URL에서 정보를 보겠다!
         setFilterProcessesUrl(SecurityConstants.AUTH_LOGIN_URL);
     }
 
     @Override
-    public Authentication attemptAuthentication(HttpServletRequest req,
-                                                HttpServletResponse res)
-                                                throws AuthenticationException {
-        // 1차각성, 2차각성 워리어 예제의 스프링 확장판
-        String username = req.getParameter("username");
-        String password = req.getParameter("password");
+    public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response) throws AuthenticationException {
 
-        Authentication authenticationToken =
-                new UsernamePasswordAuthenticationToken(username, password);
+        // 1차각성, 2차각성 워리어 예제의 스프링 확장판
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        Authentication authenticationToken = new UsernamePasswordAuthenticationToken(username, password);
 
         return authenticationManager.authenticate(authenticationToken);
     }
 
     @Override
-    protected void successfulAuthentication(HttpServletRequest request,
-                                            HttpServletResponse response,
-                                            FilterChain filterChain,
-                                            Authentication authentication)
-                                        throws IOException, ServletException {
+    protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain, Authentication authentication) {
+
         CustomUser user = ((CustomUser) authentication.getPrincipal());
 
         List<String> roles = user.getAuthorities()
@@ -69,7 +64,6 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .claim("rol", roles)
                 .compact();
 
-        response.addHeader(SecurityConstants.TOKEN_HEADER,
-                SecurityConstants.TOKEN_PREFIX + token);
+        response.addHeader(SecurityConstants.TOKEN_HEADER, SecurityConstants.TOKEN_PREFIX + token);
     }
 }

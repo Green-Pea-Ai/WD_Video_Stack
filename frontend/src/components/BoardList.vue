@@ -6,7 +6,7 @@
         <th align="center" width="80">No</th>
         <th align="center" width="320">Title</th>
         <th align="center" width="100">Writer</th>
-        <th align="center" width="100">Registration Date</th>
+        <th align="center" width="180">Registration Date</th>
       </tr>
 
       <tr v-if="!boards || (Array.isArray(boards) && boards.length === 0)">

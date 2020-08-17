@@ -63,7 +63,7 @@ public class Member {
         authList.add(auth);
     }
 
-    public void clearAuth() {
+    public void clearAuthList() {
         authList.clear();
     }
 }

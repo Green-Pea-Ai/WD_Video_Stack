@@ -46,7 +46,7 @@ export default {
     state.random = payload
   },
   [failGenRandNum] () {
-    alert('오류를(을) 시전했다.')
+    console.log('Error')
   },
   increment (state) {
     state.count++

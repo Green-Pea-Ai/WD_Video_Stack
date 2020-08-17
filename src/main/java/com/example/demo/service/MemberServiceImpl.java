@@ -80,7 +80,7 @@ public class MemberServiceImpl implements MemberService {
                 memberAuth.setAuth(auth.getAuth());
             }
         }
-
+        // JPA가 서포트하는 메소드
         repository.save(memEntity);
     }
 
