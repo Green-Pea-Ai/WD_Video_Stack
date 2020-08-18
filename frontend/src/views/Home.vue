@@ -59,6 +59,12 @@
         {{ message }}<br>
       </div>
 
+      <router-link :to="{ name: 'CrawlCategory' }"
+          class="nav-link"
+          active-class="active">
+        [CrawlCategory]
+      </router-link>
+
       <div>
         <br><span>{{ myinfo.auth }}계정, 접속을 환영합니다.</span>
       </div>

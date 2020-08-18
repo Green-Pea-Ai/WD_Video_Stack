@@ -3,10 +3,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import cookies from 'vue-cookies'
+import vuetify from './plugins/vuetify'
+import vuex from 'vuex'
 
 Vue.config.productionTip = false
 
 Vue.use(cookies)
+Vue.use(vuex)
 
 function init () {
   const savedToken = null
@@ -25,6 +28,7 @@ init().then(() => {
   new Vue({
     router,
     store,
+    vuetify,
     render: h => h(App)
   }).$mount('#app')
 })

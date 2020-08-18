@@ -15,7 +15,9 @@ import {
   SET_ACCESS_TOKEN,
   SET_MY_INFO,
   DESTROY_ACCESS_TOKEN,
-  DESTROY_MY_INFO
+  DESTROY_MY_INFO,
+  CRAWL_START,
+  FIND_ONE
 } from './mutation-types'
 
 import axios from 'axios'
@@ -23,6 +25,12 @@ import axios from 'axios'
 import cookies from 'vue-cookies'
 
 export default {
+  [CRAWL_START] (state, payload) {
+    state.lists = payload
+  },
+  [FIND_ONE] (state, payload) {
+    state.news = payload
+  },
   [ADD_TODO] (state, payload) {
     const { content } = payload
     state.todoItems.push({ id: state.nextTodoId, content, done: false })
