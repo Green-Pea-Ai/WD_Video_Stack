@@ -23,6 +23,8 @@ export default {
     }
   },
   created () {
+    // DB 가져오는 코드
+    // 액션으로 분리시키는게 낫다(리팩토링)
     axios.get('http://localhost:7777/boards')
       .then(res => {
         console.log(res)
