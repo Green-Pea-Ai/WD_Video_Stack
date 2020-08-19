@@ -9,6 +9,7 @@
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title><div @click="home">Crawl Project</div></v-toolbar-title>
       <v-spacer></v-spacer>
+      <!-- CrawlCategory.vue에서 만든 #menubar를 가져온다 -->
       <slot name="menubar"></slot>
     </v-app-bar>
     <v-navigation-drawer
@@ -18,6 +19,7 @@
       <v-list dense>
         <v-list-item @click.stop="left = !left">
           <v-list-item-action>
+            <!-- 아이콘 변경 시 이곳을 수정 -->
             <v-icon>mdi-exit-to-app</v-icon>
           </v-list-item-action>
 
@@ -67,6 +69,7 @@
 
     <v-container>
       <v-content id="content">
+        <!-- CrawlCategory.vue에서 만든 #content를 가져온다 -->
         <slot name="content" class="font">
         </slot>
       </v-content>

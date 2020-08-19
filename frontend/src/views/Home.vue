@@ -72,11 +72,11 @@
 
     <div id="header" v-else>
       <button id="login" @click="$router.push('LoginPage')">
-        Login
+        [ Login ]
       </button>
 
       <button id="login" @click="$router.push('AdminSetupPage')">
-        Register Admin
+        [ Register Admin ]
       </button>
 
       <router-link :to="{ name: 'Home' }"
@@ -90,6 +90,13 @@
           active-class="active">
         [About Us]
       </router-link>
+
+      <router-link :to="{ name: 'MovieMania' }"
+          class="nav-link"
+          active-class="active">
+        [Movie Mania]
+      </router-link>
+
     </div>
   </div>
 </template>

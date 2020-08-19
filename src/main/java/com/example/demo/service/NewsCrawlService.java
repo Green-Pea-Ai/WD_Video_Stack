@@ -116,6 +116,7 @@ public class NewsCrawlService {
             news.setCategory(category);
             news.setTitle(elements.get(i).text());
 
+            // JPA 기능, actions.js로 data를 넘긴다?
             newsRepository.save(news);
         }
     }
@@ -133,6 +134,7 @@ public class NewsCrawlService {
         clickedNews.setClickedNewsNo(String.valueOf(clickedNewsRepository.findAll().size() + 1));
 
         document = connectUrl(clickedNews.getAddress());
+
         clickedNews.setDate(document.select("span.num_date").text());
         clickedNews.setContents(document.select("div.article_view>section>:not(figure)").text());
 

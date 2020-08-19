@@ -62,7 +62,7 @@ table {
 td {
   /* css, 최근에 진행한 Vutify 예제에도 영향을 주는 스타일 시트 옵션이다 */
   border: 1px solid black;
-  width: 80px;
+  width: 180px;
   height: 80px;
   text-align: center;
 }

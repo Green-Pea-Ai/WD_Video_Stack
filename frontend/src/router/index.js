@@ -26,6 +26,14 @@ import VuetifyBoardListPage from '../views/VuetifyBoardListPage.vue'
 // For Crawling
 import CrawlCategory from '../views/CrawlCategory.vue'
 
+// Movie Mania Project
+import MovieMania from '../views/MovieMania.vue'
+import ManiaLogin from '../views/ManiaLogin.vue'
+import ManiaSignUp from '../views/ManiaSignUp.vue'
+import ManiaVideoUpload from '../views/ManiaVideoUpload.vue'
+import ManiaVideoStack from '../views/ManiaVideoStack.vue'
+import ManiaFavorite from '../views/ManiaFavorite.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -129,6 +137,49 @@ const routes = [
     name: 'CrawlCategory',
     components: {
       default: CrawlCategory
+    }
+  },
+  {
+    // Main
+    path: '/MovieMania',
+    name: 'MovieMania',
+    components: {
+      default: MovieMania
+    }
+  },
+  {
+    path: '/ManiaLogin',
+    name: 'ManiaLogin',
+    components: {
+      default: ManiaLogin
+    }
+  },
+  {
+    path: '/ManiaSignUp',
+    name: 'ManiaSignUp',
+    components: {
+      default: ManiaSignUp
+    }
+  },
+  {
+    path: '/ManiaVideoUpload',
+    name: 'ManiaVideoUpload',
+    components: {
+      default: ManiaVideoUpload
+    }
+  },
+  {
+    path: '/ManiaVideoStack',
+    name: 'ManiaVideoStack',
+    components: {
+      default: ManiaVideoStack
+    }
+  },
+  {
+    path: '/ManiaFavorite',
+    name: 'ManiaFavorite',
+    components: {
+      default: ManiaFavorite
     }
   }
 ]
