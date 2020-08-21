@@ -27,12 +27,14 @@ import VuetifyBoardListPage from '../views/VuetifyBoardListPage.vue'
 import CrawlCategory from '../views/CrawlCategory.vue'
 
 // Movie Mania Project
-import MovieMania from '../views/MovieMania.vue'
-import ManiaLogin from '../views/ManiaLogin.vue'
-import ManiaSignUp from '../views/ManiaSignUp.vue'
-import ManiaVideoUpload from '../views/ManiaVideoUpload.vue'
-import ManiaVideoStack from '../views/ManiaVideoStack.vue'
-import ManiaFavorite from '../views/ManiaFavorite.vue'
+import VideoStackMain from '../views/VideoStackMain.vue'
+import VideoStackLogin from '../views/VideoStackLogin.vue'
+import VideoStackSignUp from '../views/VideoStackSignUp.vue'
+import VideoStackUpload from '../views/VideoStackUpload.vue'
+import VideoStackAutoUpload from '../views/VideoStackAutoUpload.vue'
+import VideoStack from '../views/VideoStack.vue'
+import VideoStackDetail from '../views/VideoStackDetail.vue'
+import VideoStackFavorite from '../views/VideoStackFavorite.vue'
 
 Vue.use(VueRouter)
 
@@ -141,45 +143,59 @@ const routes = [
   },
   {
     // Main
-    path: '/MovieMania',
-    name: 'MovieMania',
+    path: '/VideoStackMain',
+    name: 'VideoStackMain',
     components: {
-      default: MovieMania
+      default: VideoStackMain
     }
   },
   {
-    path: '/ManiaLogin',
-    name: 'ManiaLogin',
+    path: '/VideoStackLogin',
+    name: 'VideoStackLogin',
     components: {
-      default: ManiaLogin
+      default: VideoStackLogin
     }
   },
   {
-    path: '/ManiaSignUp',
-    name: 'ManiaSignUp',
+    path: '/VideoStackSignUp',
+    name: 'VideoStackSignUp',
     components: {
-      default: ManiaSignUp
+      default: VideoStackSignUp
     }
   },
   {
-    path: '/ManiaVideoUpload',
-    name: 'ManiaVideoUpload',
+    path: '/VideoStackUpload',
+    name: 'VideoStackUpload',
     components: {
-      default: ManiaVideoUpload
+      default: VideoStackUpload
     }
   },
   {
-    path: '/ManiaVideoStack',
-    name: 'ManiaVideoStack',
+    path: '/VideoStackAutoUpload',
+    name: 'VideoStackAutoUpload',
     components: {
-      default: ManiaVideoStack
+      default: VideoStackAutoUpload
     }
   },
   {
-    path: '/ManiaFavorite',
-    name: 'ManiaFavorite',
+    path: '/VideoStack',
+    name: 'VideoStack',
     components: {
-      default: ManiaFavorite
+      default: VideoStack
+    }
+  },
+  {
+    path: '/VideoStackDetail',
+    name: 'VideoStackDetail',
+    components: {
+      default: VideoStackDetail
+    }
+  },
+  {
+    path: '/VideoStackFavorite',
+    name: 'VideoStackFavorite',
+    components: {
+      default: VideoStackFavorite
     }
   }
 ]

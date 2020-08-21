@@ -1,6 +1,6 @@
 <template>
   <div class="mania_login" align="center">
-    <h1>로그인 페이지</h1>
+    <h1>로그인 페이지</h1><br>
 
     <form @submit.prevent="submit">
       <table>

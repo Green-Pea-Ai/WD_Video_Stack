@@ -91,10 +91,10 @@
         [About Us]
       </router-link>
 
-      <router-link :to="{ name: 'MovieMania' }"
+      <router-link :to="{ name: 'VideoStackMain' }"
           class="nav-link"
-          active-class="active">
-        [Movie Mania]
+          active-class="active"><!-- 이전 이름 MovieMania -->
+        [Video Stack Main]
       </router-link>
 
     </div>
