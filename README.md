@@ -1,2 +1,3 @@
-# Spring_wandoo
-200721 Tue, Create!
+# Spring_wandoo의 clone.
+
+200824 , Create!
