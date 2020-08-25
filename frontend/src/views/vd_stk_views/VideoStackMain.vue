@@ -49,9 +49,9 @@
             <label>자동 업로드의 경우에는 버튼 클릭 시 바로 업로드 됩니다.</label>
           </div>
 
-          <div class="my-3">
+          <!-- <div class="my-3">
             <v-btn id="vd_select" v-on:click="clk_vd_select" large>업로드 할 영상 찾기</v-btn>
-          </div>
+          </div> -->
 
         </v-col>
       </v-app>

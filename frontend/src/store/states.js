@@ -1,4 +1,5 @@
 export default {
+  // 크리티컬 섹션이 발생할 만한 요소들을 모아놓음
   count: 0,
   weight: 2,
   random: 0,

@@ -16,7 +16,7 @@
 
 <script>
 import { mapState, mapMutations } from 'vuex'
-import { SET_FILTER } from '../store/mutation-types'
+import { SET_FILTER } from '../../store/mutation-types'
 export default {
   computed: {
     ...mapState([

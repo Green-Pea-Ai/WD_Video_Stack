@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import TodoHeader from '../components/TodoHeader.vue'
-import TodoInput from '../components/TodoInput.vue'
-import TodoList from '../components/TodoList.vue'
-import TodoFooter from '../components/TodoFooter.vue'
-import TodoFilter from '../components/TodoFilter.vue'
+import TodoHeader from '../components/todo_comp/TodoHeader.vue'
+import TodoInput from '../components/todo_comp/TodoInput.vue'
+import TodoList from '../components/todo_comp/TodoList.vue'
+import TodoFooter from '../components/todo_comp/TodoFooter.vue'
+import TodoFilter from '../components/todo_comp/TodoFilter.vue'
 import { mapActions } from 'vuex'
 // import store from '../store'
 // import { SET_EDITING_ID, RESET_EDITING_ID } from '../store/mutation-types'

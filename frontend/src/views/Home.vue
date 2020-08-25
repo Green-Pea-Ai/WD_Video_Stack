@@ -4,7 +4,7 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 
     <div id="header" v-if="isAuthorized">
-      <button id="login" @click="onCLickLogout">Logout</button>
+      <button id="login" @click="onClickLogout">Logout</button>
 
       <router-link :to="{ name: 'Home' }"
           class="nav-link"
@@ -91,7 +91,7 @@
         [About Us]
       </router-link>
 
-      <router-link :to="{ name: 'VideoStackMain' }"
+      <router-link :to="{ name: 'VideoStackLogin' }"
           class="nav-link"
           active-class="active"><!-- 이전 이름 MovieMania -->
         [Video Stack Main]

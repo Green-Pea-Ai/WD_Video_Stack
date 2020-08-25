@@ -19,7 +19,8 @@
 <script>
 import TodoItem from './TodoItem.vue'
 import { mapState, mapMutations, mapGetters } from 'vuex'
-import { RESET_EDITING_ID, SET_EDITING_ID } from '../store/mutation-types'
+// ../../store (components/todo_comp/store) 이렇게 해줘야 store를 찾아갈 수 있다.
+import { RESET_EDITING_ID, SET_EDITING_ID } from '../../store/mutation-types'
 
 export default {
   components: {

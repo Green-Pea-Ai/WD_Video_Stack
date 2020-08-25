@@ -27,14 +27,14 @@ import VuetifyBoardListPage from '../views/VuetifyBoardListPage.vue'
 import CrawlCategory from '../views/CrawlCategory.vue'
 
 // Movie Mania Project
-import VideoStackMain from '../views/VideoStackMain.vue'
-import VideoStackLogin from '../views/VideoStackLogin.vue'
-import VideoStackSignUp from '../views/VideoStackSignUp.vue'
-import VideoStackUpload from '../views/VideoStackUpload.vue'
-import VideoStackAutoUpload from '../views/VideoStackAutoUpload.vue'
-import VideoStack from '../views/VideoStack.vue'
-import VideoStackDetail from '../views/VideoStackDetail.vue'
-import VideoStackFavorite from '../views/VideoStackFavorite.vue'
+import VideoStackMain from '../views/vd_stk_views/VideoStackMain.vue'
+import VideoStackLogin from '../views/vd_stk_views/VideoStackLogin.vue'
+import VideoStackSignUp from '../views/vd_stk_views/VideoStackSignUp.vue'
+import VideoStackUpload from '../views/vd_stk_views/VideoStackUpload.vue'
+import VideoStackAutoUpload from '../views/vd_stk_views/VideoStackAutoUpload.vue'
+import VideoStack from '../views/vd_stk_views/VideoStack.vue'
+import VideoStackDetail from '../views/vd_stk_views/VideoStackDetail.vue'
+import VideoStackFavorite from '../views/vd_stk_views/VideoStackFavorite.vue'
 
 Vue.use(VueRouter)
 
@@ -142,7 +142,7 @@ const routes = [
     }
   },
   {
-    // Main
+    // VideoStack Project Main
     path: '/VideoStackMain',
     name: 'VideoStackMain',
     components: {

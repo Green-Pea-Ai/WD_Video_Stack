@@ -1,4 +1,5 @@
 import {
+  // mutation: Vuex의 데이터, 즉 state 값을 변경하는 로직들을 의미
   ADD_TODO,
   REMOVE_TODO,
   CLEAR_ALL,
