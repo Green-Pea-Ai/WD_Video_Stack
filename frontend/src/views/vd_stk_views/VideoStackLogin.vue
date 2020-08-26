@@ -16,7 +16,10 @@
 
         <tr>
           <td colspan="2" align="center">
-            <button type="submit">[로그인]</button>
+            <!-- <button type="submit">[로그인]</button> -->
+            <button id="login" @click="$router.push('VideoStackMain')">
+              [로그인]
+            </button>
             <v-spacer>     ------------      </v-spacer>
             <button id="login" @click="$router.push('VideoStackSignUp')">
               [회원가입]

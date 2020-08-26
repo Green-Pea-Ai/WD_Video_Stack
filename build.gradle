@@ -70,6 +70,10 @@ dependencies {
 	compile group: 'commons-io', name: 'commons-io', version: '2.7'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	//MongoDB
+	// https://mvnrepository.com/artifact/org.mongodb/mongodb-driver
+	compile group: 'org.mongodb', name: 'mongodb-driver', version: '3.6.3'
+	implementation 'org.springframework.boot:spring-boot-configuration-processor'
 	}
 }
 
