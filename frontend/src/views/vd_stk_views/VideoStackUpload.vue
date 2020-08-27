@@ -1,6 +1,6 @@
 <template>
   <div class="mania_sign_up" align="center">
-    <h1>영상 업로드 상세 페이지</h1>
+    <h1>영상 업로드 페이지</h1>
     <br>
     <h4>영상 제목과 세부옵션 설정 후 업로드 할 수 있습니다.</h4>
     <br>
@@ -9,17 +9,22 @@
       <table>
         <tr>
           <td>영상 제목</td>
-          <td><input type="text" v-model="userid"></td>
+          <td><input type="text" v-model="vid_title"></td>
         </tr>
 
         <tr>
           <td>영상(썸네일 이미지 표시)</td>
-          <td><input type="password" v-model="password"></td>
+          <td><input type="video" v-model="vid_video"></td>
         </tr>
 
         <tr>
           <td>영상설명 또는 메모</td>
-          <td><input type="password" v-model="password"></td>
+          <td><input type="text" v-model="vid_comment"></td>
+        </tr>
+
+        <tr>
+          <td>카테고리(분류 용도, 사용자에게 보이지 않음)</td>
+          <td><input type="text" v-model="vid_category"></td>
         </tr>
 
         <tr>

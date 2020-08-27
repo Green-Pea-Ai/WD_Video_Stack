@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Data
 @NoArgsConstructor // 인자없는 생성자 호출하겠다
+// DB 생성은 @Entity가 진행함
 @Entity
 public class News {
     @Id

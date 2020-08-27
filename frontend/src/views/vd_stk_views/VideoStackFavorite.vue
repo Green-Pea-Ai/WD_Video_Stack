@@ -8,7 +8,7 @@
 
     <h4>카테고리를 직접 설정하거나(off) 데이터 수집후에 맞춤기능 버튼을(on) </h4>
     <h4>이용해 사용자 맞춤 카테고리에 대한 영상정보를 표시합니다.</h4><br><br>
-
+뷰티파이 전용태그
     <img src="/home/bitai/Downloads/Mania_favorite1.jpeg" alt="관심사 이미지">
     <br><br><br>
     <a href="https://m.blog.naver.com/tamiblue/221723206818?view=img_1">참고 이미지</a>

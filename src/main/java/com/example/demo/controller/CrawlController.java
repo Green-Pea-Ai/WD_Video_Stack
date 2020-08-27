@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @Log
+// Representational State Transfer(Rest), 대표 상태 전송 컨트롤러
 @RestController
 @CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
 public class CrawlController {

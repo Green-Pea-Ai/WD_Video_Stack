@@ -21,7 +21,7 @@
     </template>
 
     <template #content>
-      <!-- vuetify를 써야 v simple table을 쓸 수 있다. -->
+      <!-- vuetify를 써야 v-simple-table을 쓸 수 있다. -->
       <v-simple-table>
         <template v-slot:default>
           <!-- 쓰레드아니고 t헤드임 -->
@@ -32,6 +32,7 @@
             </tr>
           </thead>
           <tbody>
+            <!-- list는 별칭, lists는 states.js의 lists 배열 -->
             <tr v-for="list of lists" :key="list.title">
               <td style="color: gray">{{ list.newsNo }}</td>
               <td><a @click="clickNew(list.newsNo)">{{ list.title }}</a></td>

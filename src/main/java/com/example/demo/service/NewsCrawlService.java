@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@Lazy
+@Lazy // 지연로딩, 실제 사용될 때 로딩됨, @Bean은 즉시 로딩
 @Log
 public class NewsCrawlService {
     @Autowired
@@ -55,7 +55,7 @@ public class NewsCrawlService {
         return document;
     }
     // 엔티티는 롬복으로 한줄컷
-    // 리포지토리는 JAP로 한줄컷
+    // 리포지토리는 JPA로 한줄컷
     // 데이터가 DB가 아닌 컴퓨터로 들어오면 큰일이 발생할 수 있다.
     public List<News> newsFindAll() {
         log.info("newsFindAll()");
@@ -73,6 +73,7 @@ public class NewsCrawlService {
     public void crawlingHome() {
         log.info("crawlingHome()");
 
+        // ???
         homeNewsRepository.deleteAll();
         document = connectUrl("https://news.daum.net");
 
@@ -95,6 +96,7 @@ public class NewsCrawlService {
         log.info("mainCrawler(): " + category);
 
         document = connectUrl("https://news.daum.net/" + category);
+        // ???
         newsRepository.deleteAll();
 
         daumNews(document.select("div.item_mainnews>div.cont_thumb>strong.tit_thumb>a"), category);
@@ -117,6 +119,7 @@ public class NewsCrawlService {
             news.setTitle(elements.get(i).text());
 
             // JPA 기능, actions.js로 data를 넘긴다?
+            // DB에 데이터가 담기는 위치?
             newsRepository.save(news);
         }
     }

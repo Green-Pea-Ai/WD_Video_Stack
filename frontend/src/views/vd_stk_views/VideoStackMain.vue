@@ -1,6 +1,6 @@
 <template>
   <div class="mania_main" align="center">
-    <h1>Movie Mania Page (Beta)</h1>
+    <h1>VideoStack Main Page(Beta)</h1>
     <br>
     <!--
     <div id="mania_text_field">
@@ -22,9 +22,13 @@
         <button id="login" @click="$router.push('VideoStackFavorite')">
           [ 관심 영상 정보 ]
         </button>
+        <br><br>
+        <button id="login" @click="$router.push('')">
+        %nbsp;[ 로그아웃 ]
+        </button>
 
       <v-app id="inspire">
-        <v-col class="text-center" cols="12" sm="4">
+        <v-col class="text-center" cols="12" sm="15">
 
           <v-text-field
             label="영상의 폴더 경로를 입력해도 업로드가 가능합니다."

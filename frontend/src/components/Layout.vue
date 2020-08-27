@@ -90,8 +90,8 @@
 import router from '../router'
 
 export default {
+  // '=>'를 쓰면 return을 안써도 된다.
   data: () => ({
-    // '=>'를 쓰면 return을 안써도 된다.
     drawer: false,
     left: false
   }),
