@@ -15,6 +15,7 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
+    // 리스트 출력?
     public List<UserVo> getUserList() {
         return repository.findAll().stream().map(u -> {
             UserVo vo = new UserVo();
@@ -26,8 +27,11 @@ public class UserService {
         }).collect(Collectors.toList());
     }
 
+    // ID값 받아오기
+    // findById는 JPA에서만 쓸 수 있다.
+    // 몽고DB에서 JPA를 쓸 수 있는 플러그인을 찾아야 함
     public UserVo getUserById(String id) {
-        return repository.findById(id).map(u -> {
+        return repository.findById(id).map(u - > {
             UserVo vo = new UserVo();
             vo.setId(u.getId());
             vo.setName(u.getName());
@@ -37,6 +41,7 @@ public class UserService {
         }).orElse(null);
     }
 
+    // insert?
     public void saveUser(UserVo vo) {
         User user = new User();
         user.setName(vo.getName());
@@ -45,6 +50,7 @@ public class UserService {
         repository.save(user);
     }
 
+    // update
     public void updateUser(UserVo vo) {
         User user = new User();
         user.setId(vo.getId());
@@ -54,6 +60,7 @@ public class UserService {
         repository.save(user);
     }
 
+    // delete
     public void deleteUser(UserVo vo) {
         User user = new User();
         user.setId(vo.getId());
