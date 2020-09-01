@@ -1,11 +1,13 @@
 server:
   port: 7777
 
+# jdbc:mysql://localhost:3306/testdb?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
+# jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC&useSSL=false
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC&useSSL=false
-    username: bitai
-    password: 456123
+    username: Root
+    password: qAqR1532!#
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
