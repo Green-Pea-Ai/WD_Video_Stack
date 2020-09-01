@@ -71,43 +71,5 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+
 }
-
-test {
-	useJUnitPlatform()
-}
-
-test {
-	systemProperty("java.library.path",
-			file("${buildDir}/libs/hello/shared").absolutePath)
-}
-
-model {
-	platforms {
-		x64 {
-			architecture "x64"
-		}
-	}
-
-
-	components {
-		//하드웨어 컨트롤을 위한 설정
-		hello(NativeLibrarySpec) {
-			binaries.all {
-				if (targetPlatform.operatingSystem.macOsX) {
-						cCompiler.args '-I', "${org.gradle.internal.jvm.Jvm.current().javaHome}/include"
-						cCompiler.args '-I', "${org.gradle.internal.jvm.Jvm.current().javaHome}/include/darwin"
-						cCompiler.args '-mmacosx-version-min=10.4'
-						linker.args '-mmacosx-version-min=10'
-				} else if (targetPlatform.operatingSystem.linux) {
-						cCompiler.args '-I', "${org.gradle.internal.jvm.Jvm.current().javaHome}/include"
-						cCompiler.args '-I', "${org.gradle.internal.jvm.Jvm.current().javaHome}/include/linux"
-						cCompiler.args '-D_FILE_OFFSET_BITS=64'
-
-				}
-			}
-		}
-	}
-}
-//자바에서 c언어를 연동하기 위한 라이브러리
-test.dependsOn 'helloSharedLibrary'
