@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import TrComponent from '../components/TrComponent.vue'
+import TrComponent from '../components/five_eye_comp/TrComponent.vue'
 
 export default {
   data () {

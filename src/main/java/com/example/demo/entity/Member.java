@@ -28,7 +28,7 @@ import java.util.List;
 // JPA, Repository 기능 구현할 때 코드량이 많았는데 그것을 자동으로 해준다
 @Entity
 
-// create table member가 자동으로 진행됨
+// create table member 가 자동으로 진행됨
 @Table(name = "member")
 public class Member {
     @Id

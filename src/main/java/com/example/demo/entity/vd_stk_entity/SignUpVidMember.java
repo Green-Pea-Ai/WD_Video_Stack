@@ -1,3 +1,4 @@
+/*
 package com.example.demo.entity.vd_stk_entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -27,3 +28,4 @@ public class SignUpVidMember {
     @Column(length = 100, nullable = false)
     private String userName;
 }
+*/

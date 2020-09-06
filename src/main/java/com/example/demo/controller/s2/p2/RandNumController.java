@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.example.demo.controller.s2.p2;
 
-import com.example.demo.entity.RandNumMessage;
-import com.example.demo.service.RandNumService;
+import com.example.demo.entity.s2.RandNumMessage;
+import com.example.demo.service.s2.RandNumService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

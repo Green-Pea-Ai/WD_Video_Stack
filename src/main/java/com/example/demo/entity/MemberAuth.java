@@ -14,7 +14,7 @@ import java.util.Date;
 @Setter
 @ToString
 @Entity
-// create table member_auth가 자동으로 진행
+// create table member_auth 가 자동으로 진행
 @Table(name = "member_auth")
 public class MemberAuth {
     @Id

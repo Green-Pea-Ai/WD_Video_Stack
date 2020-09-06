@@ -1,3 +1,4 @@
+<!-- s2 p2 등 -->
 <template>
 
     <div class="home">

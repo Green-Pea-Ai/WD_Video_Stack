@@ -1,8 +1,10 @@
+// s2의 p2, rand 예제
 package com.example.demo.config;
 
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+// CORS: Cross Origin Resource Sharing(출처 교차 자원 공유?)
 public class CorsConfig implements WebMvcConfigurer {
 
     @Override

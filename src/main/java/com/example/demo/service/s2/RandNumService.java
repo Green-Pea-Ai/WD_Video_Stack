@@ -1,7 +1,8 @@
-package com.example.demo.service;
+// s2의 p2
+package com.example.demo.service.s2;
 
-import com.example.demo.entity.RandNumMessage;
-import com.example.demo.repository.RandNumRepository;
+import com.example.demo.entity.s2.RandNumMessage;
+import com.example.demo.repository.s2.RandNumRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

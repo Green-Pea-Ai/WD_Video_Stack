@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import TableComponent from '../components/TableComponent.vue'
+import TableComponent from '../components/five_eye_comp/TableComponent.vue'
 
 export default {
   components: {

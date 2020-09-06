@@ -1,7 +1,8 @@
-package com.example.demo.service;
+package com.example.demo.service.s1;
 
-import com.example.demo.entity.Board;
-import com.example.demo.repository.BoardRepository;
+import com.example.demo.entity.s1.Board;
+import com.example.demo.repository.s1.BoardRepository;
+import com.example.demo.service.s1.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

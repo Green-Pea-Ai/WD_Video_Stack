@@ -18,7 +18,7 @@ export default {
     }
   },
   props: {
-    // GlobalComponent를 쓰려면 형식을 맞춰줘야 한다.
+    // GlobalComponent 를 쓰려면 형식을 맞춰줘야 한다.
     // GlobalComponent ===> global-component
     cellData: String,
     rowIndex: Number,

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import TdComponent from '../components/TdComponent.vue'
+import TdComponent from '../components/five_eye_comp/TdComponent.vue'
 
 export default {
   components: {

@@ -1,7 +1,8 @@
-package com.example.demo.controller;
+// s1, s2
+package com.example.demo.controller.s1;
 
-import com.example.demo.entity.Board;
-import com.example.demo.service.BoardService;
+import com.example.demo.entity.s1.Board;
+import com.example.demo.service.s1.BoardService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

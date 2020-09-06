@@ -1,11 +1,10 @@
-package com.example.demo.repository;
+package com.example.demo.repository.s1;
 
-import com.example.demo.entity.Board;
+import com.example.demo.entity.s1.Board;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
