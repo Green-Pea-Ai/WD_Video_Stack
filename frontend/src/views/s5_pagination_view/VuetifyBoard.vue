@@ -7,7 +7,7 @@
 
 <script>
 import axios from 'axios'
-import VuetifyBoardListForm from '@/components/VuetifyBoardListForm.vue'
+import VuetifyBoardListForm from '@/components/s5_pagination_comp/VuetifyBoardListForm.vue'
 
 export default {
   name: 'VuetifyBoard',

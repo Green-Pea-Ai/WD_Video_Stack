@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package com.example.demo.repository.s6;
 
-import com.example.demo.entity.News;
+import com.example.demo.entity.s6.News;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 // 클래스로 하면 추상화하라는 오류 메시지 발생하는 이유?

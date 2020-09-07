@@ -10,7 +10,7 @@
 
 <script>
 import axios from 'axios'
-import BoardListPageForm from '@/components/BoardListPageForm.vue'
+import BoardListPageForm from '@/components/s5_pagination_comp/BoardListPageForm.vue'
 
 export default {
   name: 'VuetifyBoardListPage',

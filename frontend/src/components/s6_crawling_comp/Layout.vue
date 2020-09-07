@@ -87,7 +87,7 @@
 </template>
 
 <script>
-import router from '../router'
+import router from '@/router'
 
 export default {
   // '=>'를 쓰면 return을 안써도 된다.

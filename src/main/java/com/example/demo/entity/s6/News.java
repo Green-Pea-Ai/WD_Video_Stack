@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.entity.s6;
 
 import lombok.Builder;
 import lombok.Data;
@@ -7,16 +7,16 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-// 인자가 없는 생성자 생성
-@NoArgsConstructor
+@NoArgsConstructor // 인자없는 생성자 호출하겠다
+// DB 생성은 @Entity 가 진행함
 @Entity
-public class Videos {
+public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long videoSeq;
+    private Long newsSeq;
 
     @Column(length = 20, nullable = false)
-    private String videoNo;
+    private String newsNo;
 
     @Column(length = 20, nullable = false)
     private String category;
@@ -28,8 +28,8 @@ public class Videos {
     private String address;
 
     @Builder
-    public Videos(String videoNo, String category, String title, String address) {
-        this.videoNo = videoNo;
+    public News(String newsNo, String category, String title, String address) {
+        this.newsNo = newsNo;
         this.address = address;
         this.category = category;
         this.title = title;

@@ -1,16 +1,15 @@
 package com.example.demo.service.s6;
 
-import com.example.demo.entity.ClickedNews;
-import com.example.demo.entity.HomeNews;
-import com.example.demo.entity.News;
-import com.example.demo.repository.ClickedNewsRepository;
-import com.example.demo.repository.HomeNewsRepository;
-import com.example.demo.repository.NewsRepository;
+import com.example.demo.entity.s6.ClickedNews;
+import com.example.demo.entity.s6.HomeNews;
+import com.example.demo.entity.s6.News;
+import com.example.demo.repository.s6.ClickedNewsRepository;
+import com.example.demo.repository.s6.HomeNewsRepository;
+import com.example.demo.repository.s6.NewsRepository;
 import lombok.extern.java.Log;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;

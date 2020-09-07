@@ -1,8 +1,8 @@
 package com.example.demo.controller.s6;
 
-import com.example.demo.entity.ClickedNews;
-import com.example.demo.entity.HomeNews;
-import com.example.demo.entity.News;
+import com.example.demo.entity.s6.ClickedNews;
+import com.example.demo.entity.s6.HomeNews;
+import com.example.demo.entity.s6.News;
 import com.example.demo.service.s6.NewsCrawlService;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
