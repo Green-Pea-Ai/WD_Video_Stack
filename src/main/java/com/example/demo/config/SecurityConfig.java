@@ -1,7 +1,8 @@
+// s4, JWT(JSON Web Token) 관련 보안처리
 package com.example.demo.config;
 
-import com.example.demo.security.CustomAccessDeniedHandler;
-import com.example.demo.security.CustomUserDetailsService;
+import com.example.demo.security.s4.CustomAccessDeniedHandler;
+import com.example.demo.security.s4.CustomUserDetailsService;
 import com.example.demo.security.JwtAuthenticationFilter;
 import com.example.demo.security.JwtAuthorizationFilter;
 import lombok.extern.java.Log;

@@ -1,3 +1,4 @@
+// s3, board base 예제에 사용됨
 package com.example.demo.config;
 
 import org.springframework.context.annotation.Bean;

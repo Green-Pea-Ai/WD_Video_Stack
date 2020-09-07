@@ -16,8 +16,10 @@
   </tr>
 </template>
 
+<!-- 지금은 components 를 가리키고 있다, 폴더로 묶기 전에는 src를 가리키고 있어야 됐는데
+지금은 왜 이렇게 해야 될까? -->
 <script>
-import TdComponent from '../components/five_eye_comp/TdComponent.vue'
+import TdComponent from '../five_eye_comp/TdComponent.vue'
 
 export default {
   components: {

@@ -66,7 +66,7 @@
       </router-link>
 
       <div>
-        <br><span>{{ myinfo.auth }}계정, 접속을 환영합니다.</span>
+        <br><span>{{ myinfo.auth }} 계정, 접속을 환영합니다.</span>
       </div>
     </div>
 
