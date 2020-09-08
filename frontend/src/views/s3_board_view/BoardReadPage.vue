@@ -9,8 +9,13 @@
 
     <button @click="onDelete">Delete</button>
     <router-link :to="{ name: 'BoardListPage' }">
-      List
+      [List]
     </router-link>
+
+    <router-link :to="{ name: 'VuetifyBoardListPage' }">
+      [New_List]
+    </router-link>
+
   </div>
 </template>
 
