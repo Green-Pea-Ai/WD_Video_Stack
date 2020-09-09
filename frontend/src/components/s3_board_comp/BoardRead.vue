@@ -1,6 +1,6 @@
 <template>
   <div id="center">
-    <h3>Board Detailed View</h3>
+    <h3>S3 Board Detailed View</h3>
     <table>
       <tr>
         <td>No</td>

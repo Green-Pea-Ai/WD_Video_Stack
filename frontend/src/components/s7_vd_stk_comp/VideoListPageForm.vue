@@ -1,14 +1,6 @@
 <template>
   <div>
-    <button id="login" @click="$router.push('VideoStackFavorite')">
-      [ 관심 영상 정보 ]
-    </button>
-    <br><br>
-    <button id="login" @click="$router.push('')">
-      [ 로그아웃 ]
-    </button>
-    <br><br>
-
+    <br>
     <h3>영상 정보 리스트</h3>
     <table border="1">
       <tr>
@@ -18,8 +10,8 @@
         <th align="center" width="200">Registration Date</th>
       </tr>
 
-      <tr v-for="page in paginatedData" :key="page.boardNo">
-        <td>{{ page.boardNo }}</td>
+      <tr v-for="page in paginatedData" :key="page.videoNo">
+        <td>{{ page.videoNo }}</td>
         <td>{{ page.mov_title }}</td>
         <td>{{ page.director }}</td>
         <td>{{ page.regDate }}</td>

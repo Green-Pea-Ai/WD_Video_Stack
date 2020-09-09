@@ -1,6 +1,6 @@
 <template>
   <div id="center">
-    <h2>Detailed Board List</h2>
+    <h2>S3 Detailed Board List</h2>
     <board-read v-if="board" :board="board"/>
     <p v-else>Loading ... </p>
     <router-link :to="{ name: 'BoardModifyPage', params: { boardNo } }">

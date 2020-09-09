@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>Board Modified Form</h3>
+    <h3>S3 Board Modified Form</h3>
 
       <form @submit.prevent="onSubmit">
         <table>

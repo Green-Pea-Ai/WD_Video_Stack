@@ -1,0 +1,39 @@
+<template>
+  <div align="center">
+    <h2>Video Board List</h2>
+    <br>
+    <router-link :to="{ name: 'VideoRegisterPage'}">
+      새로운 영화 정보 등록하기
+    </router-link>
+    <video-list-page-form :list-array="pageArray"/>
+  </div>
+</template>
+
+<script>
+import axios from 'axios'
+import VideoListPageForm from '@/components/s7_vd_stk_comp/VideoListPageForm.vue'
+
+export default {
+  name: 'VideoListPage',
+  components: {
+    VideoListPageForm
+  },
+  data () {
+    return {
+      pageArray: []
+    }
+  },
+  created () {
+    // DB 가져오는 코드
+    // 아직 사용되지 않은 코드
+    axios.get('http://localhost:7777/video_data')
+      .then(res => {
+        console.log(res)
+        this.pageArray = res.data
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+}
+</script>

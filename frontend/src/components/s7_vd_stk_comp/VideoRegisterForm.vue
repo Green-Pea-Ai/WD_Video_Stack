@@ -1,15 +1,15 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <h3>S3 Board Register Form</h3>
+    <h3>Video Register Form</h3>
     <table>
       <tr>
-        <td>Title</td>
-        <td><input type="text" v-model="title"></td>
+        <td>Movie Title</td>
+        <td><input type="text" v-model="mov_title"></td>
       </tr>
 
       <tr>
-        <td>Writer</td>
-        <td><input type="text" v-model="writer"></td>
+        <td>Director</td>
+        <td><input type="text" v-model="director"></td>
       </tr>
 
       <tr>
@@ -19,9 +19,9 @@
     </table>
 
     <div>
-      <button type="submit">Register</button>
-      <router-link :to="{ name: 'BoardListPage' }">
-        Cancel
+      <button type="submit">[Register]</button>
+      <router-link :to="{ name: 'VideoListPage'}">
+        [Cancel]
       </router-link>
     </div>
   </form>
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  name: 'BoardRegisterForm',
+  name: 'VideoRegisterForm',
   data () {
     return {
       title: '',

@@ -1,6 +1,6 @@
 <template>
   <div id="center">
-    <h2>Board Modification</h2>
+    <h2>S3 Board Modification</h2>
     <board-modify-form v-if="board" :board="board" @submit="onSubmit"/>
     <p v-else>Loading ...</p>
   </div>

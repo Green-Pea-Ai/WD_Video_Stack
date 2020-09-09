@@ -34,13 +34,15 @@ import VideoStackSignUp from '../views/s7_vd_stk_views/VideoStackSignUp.vue'
 // 로그아웃 한다.
 import VideoStackLogin from '../views/s7_vd_stk_views/VideoStackLogin.vue'
 
-// C: 게시판에 글을 등록할 수 있고,
-// R: 글을 읽을 수 있고
 // U: 글을 수정할 수 있고
 // D: 글을 삭제할 수 있다.
 // S: 글의 제목, 내용으로 검색할 수 있다.
 // P: 페이지네이션
 import VideoStackMain from '../views/s7_vd_stk_views/VideoStackMain.vue'
+// C: 게시판에 글을 등록할 수 있고,
+import VideoRegisterPage from '../views/s7_vd_stk_views/VideoRegisterPage.vue'
+// R: 글을 읽을 수 있고
+import VideoListPage from '../views/s7_vd_stk_views/VideoListPage.vue'
 
 // 크롤링한 데이터들을 출력하는 페이지이다.
 // S: 검색할 수 있다.
@@ -172,6 +174,20 @@ const routes = [
     name: 'VideoStackLogin',
     components: {
       default: VideoStackLogin
+    }
+  },
+  {
+    path: '/video/create',
+    name: 'VideoRegisterPage',
+    components: {
+      default: VideoRegisterPage
+    }
+  },
+  {
+    path: '/video/list',
+    name: 'VideoListPage',
+    components: {
+      default: VideoListPage
     }
   },
   {

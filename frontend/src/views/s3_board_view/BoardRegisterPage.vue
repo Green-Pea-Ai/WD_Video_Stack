@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h2>Board Register</h2>
+    <h2>S3 Board Register</h2>
     <board-register-form @submit="onSubmit"/>
   </div>
 </template>
