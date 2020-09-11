@@ -1,7 +1,7 @@
 <template>
   <div id="center">
 
-    <h2>Detailed Video List(Read)</h2>
+    <h2>Detailed Video Board List(Read)</h2>
     <video-read v-if="video" :video="video"/>
     <p v-else>Loading...</p>
     <router-link :to="{ name: 'VideoModifyPage', params: { videoNo } }">
@@ -33,6 +33,33 @@ export default {
     ...mapState([
       'video'
     ])
+  },
+  created () {
+    console.log('VideoReadPage created(): ' + this.videoNo)
+    this.fetchVideo(this.videoNo)
+      .catch(err => {
+        alert(err.response.data.message)
+        this.$router.push()
+      })
+  },
+  methods: {
+    ...mapActions([
+      'fetchVideo'
+    ]),
+    onVideoDelete () {
+      const { videoNo } = this.video
+      axios.delete(`http://localhost:7777/videos/${videoNo}`)
+        .then(res => {
+          alert('Video Delete Success!')
+          this.$router.push({ name: 'VideoListPage' })
+        })
+        .catch(err => {
+          alert(err.response.data.message)
+        })
+    }
+  },
+  components: {
+    VideoRead
   }
 }
 </script>

@@ -13,8 +13,13 @@ export const RESET_EDITING_ID = 'RESET_EDITING_ID'
 export const TOGGLE_TODO_STATUS = 'TOGGLE_TODO_STATUS'
 export const SET_FILTER = 'SET_FILTER'
 
+// Board Exam
 export const FETCH_BOARD_LIST = 'FETCH_BOARD_LIST'
 export const FETCH_BOARD = 'FETCH_BOARD'
+
+// WD Video Stack Proj
+export const FETCH_VIDEO_LIST = 'FETCH_VIDEO_LIST'
+export const FETCH_VIDEO = 'FETCH_VIDEO'
 
 // For Login & Logout
 export const SET_ACCESS_TOKEN = 'SET_ACCESS_TOKEN'

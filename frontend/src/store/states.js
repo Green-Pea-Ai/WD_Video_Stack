@@ -10,6 +10,9 @@ export default {
   // Vue Board
   boards: [],
   board: null,
+  // WD Video Stack
+  videos: [],
+  video: null,
   // For Login
   accessToken: '',
   myinfo: null,

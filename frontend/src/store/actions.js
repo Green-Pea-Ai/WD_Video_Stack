@@ -7,6 +7,7 @@ import {
   RESTORE,
   EDIT_TODO,
   TOGGLE_TODO_STATUS,
+  /* Board Exam */
   FETCH_BOARD_LIST,
   FETCH_BOARD,
   SET_ACCESS_TOKEN,
@@ -17,7 +18,10 @@ import {
   /* Crawl */
   FIND_ONE,
   FIND_HOME,
-  CRAWL_START
+  CRAWL_START,
+  /* WD Video Stack */
+  FETCH_VIDEO_LIST,
+  FETCH_VIDEO
 } from './mutation-types'
 
 import axios from 'axios'
@@ -54,6 +58,20 @@ export default {
       .then(res => {
         console.log('fetchBoard - res: ' + res.data)
         commit(FETCH_BOARD, res.data)
+      })
+  },
+  fetchVideoList ({ commit }) {
+    return axios.get('http://localhost:7777/videos_data')
+      .then(res => {
+        commit(FETCH_VIDEO_LIST, res.data)
+      })
+  },
+  fetchVideo ({ commit }, videoNo) {
+    console.log('fetchVideo ' + commit + ', videoNo = ' + videoNo)
+    return axios.get(`http://localhost:7777/videos_data/${videoNo}`)
+      .then(res => {
+        console.log('fetchVideo - res: ' + res.data)
+        commit(FETCH_VIDEO, res.data)
       })
   },
   editTodo ({ commit }, payload) {

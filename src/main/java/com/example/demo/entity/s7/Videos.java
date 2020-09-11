@@ -1,4 +1,4 @@
-package com.example.demo.entity.vd_stk_entity;
+package com.example.demo.entity.s7;
 
 import lombok.Builder;
 import lombok.Data;

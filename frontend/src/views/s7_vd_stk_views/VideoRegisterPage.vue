@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h2>Video Register</h2>
+    <h2>Video Board Register</h2>
     <br>
     <video-register-form @submit="onSubmit"/>
   </div>
@@ -19,7 +19,7 @@ export default {
     onSubmit (payload) {
       console.log('VideoRegisterPage onSubmit()!!!')
       const { movTitle, director, content } = payload
-      axios.post('http://localhost:7777/video_data', { movTitle, director, content })
+      axios.post('http://localhost:7777/videos_data', { movTitle, director, content })
         .then(res => {
           console.log(res)
           alert('VS Register Success!')

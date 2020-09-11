@@ -4,7 +4,7 @@
     <table>
       <tr>
         <td>Movie Title</td>
-        <td><input type="text" v-model="mov_title"></td>
+        <td><input type="text" v-model="movTitle"></td>
       </tr>
 
       <tr>
@@ -32,15 +32,15 @@ export default {
   name: 'VideoRegisterForm',
   data () {
     return {
-      title: '',
-      writer: '',
+      movTitle: '',
+      director: '',
       content: ''
     }
   },
   methods: {
     onSubmit () {
-      const { title, writer, content } = this
-      this.$emit('submit', { title, writer, content })
+      const { movTitle, director, content } = this
+      this.$emit('submit', { movTitle, director, content })
     }
   }
 }

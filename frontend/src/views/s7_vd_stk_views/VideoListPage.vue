@@ -26,7 +26,7 @@ export default {
   created () {
     // DB 가져오는 코드
     // 아직 사용되지 않은 코드
-    axios.get('http://localhost:7777/video_data')
+    axios.get('http://localhost:7777/videos_data')
       .then(res => {
         console.log(res)
         this.pageArray = res.data

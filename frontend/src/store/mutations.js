@@ -13,6 +13,8 @@ import {
   SET_FILTER,
   FETCH_BOARD_LIST,
   FETCH_BOARD,
+  FETCH_VIDEO_LIST,
+  FETCH_VIDEO,
   SET_ACCESS_TOKEN,
   SET_MY_INFO,
   DESTROY_ACCESS_TOKEN,
@@ -98,6 +100,12 @@ export default {
   },
   [FETCH_BOARD] (state, board) {
     state.board = board
+  },
+  [FETCH_VIDEO_LIST] (state, videos) {
+    state.videos = videos
+  },
+  [FETCH_VIDEO] (state, video) {
+    state.video = video
   },
   [SET_ACCESS_TOKEN] (state, accessToken) {
     if (accessToken) {
