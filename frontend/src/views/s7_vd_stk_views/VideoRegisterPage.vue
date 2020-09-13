@@ -19,7 +19,7 @@ export default {
     onSubmit (payload) {
       console.log('VideoRegisterPage onSubmit()!!!')
       const { movTitle, director, content } = payload
-      axios.post('http://localhost:7777/videos_data', { movTitle, director, content })
+      axios.post('http://localhost:7777/videos', { movTitle, director, content })
         .then(res => {
           console.log(res)
           alert('VS Register Success!')

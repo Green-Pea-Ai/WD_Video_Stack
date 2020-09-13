@@ -43,6 +43,7 @@ import VideoStackMain from '../views/s7_vd_stk_views/VideoStackMain.vue'
 import VideoRegisterPage from '../views/s7_vd_stk_views/VideoRegisterPage.vue'
 // R: 글을 읽을 수 있고
 import VideoListPage from '../views/s7_vd_stk_views/VideoListPage.vue'
+import VideoReadPage from '../views/s7_vd_stk_views/VideoReadPage.vue'
 
 // 크롤링한 데이터들을 출력하는 페이지이다.
 // S: 검색할 수 있다.
@@ -181,6 +182,13 @@ const routes = [
     name: 'VideoRegisterPage',
     components: {
       default: VideoRegisterPage
+    }
+  },
+  {
+    path: '/video/read',
+    name: 'VideoReadPage',
+    components: {
+      default: VideoReadPage
     }
   },
   {

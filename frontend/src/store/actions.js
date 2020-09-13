@@ -61,14 +61,14 @@ export default {
       })
   },
   fetchVideoList ({ commit }) {
-    return axios.get('http://localhost:7777/videos_data')
+    return axios.get('http://localhost:7777/videos')
       .then(res => {
         commit(FETCH_VIDEO_LIST, res.data)
       })
   },
   fetchVideo ({ commit }, videoNo) {
     console.log('fetchVideo ' + commit + ', videoNo = ' + videoNo)
-    return axios.get(`http://localhost:7777/videos_data/${videoNo}`)
+    return axios.get(`http://localhost:7777/videos/${videoNo}`)
       .then(res => {
         console.log('fetchVideo - res: ' + res.data)
         commit(FETCH_VIDEO, res.data)

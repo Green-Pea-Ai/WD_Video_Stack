@@ -8,7 +8,7 @@
       </tr>
 
       <tr>
-        <td>등록일</td>
+        <td>등록 날짜</td>
         <td><input type="text" :value="video.regDate" readonly></td>
       </tr>
 
@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: 'VideoRead',
+  name: 'VideoReadForm',
   props: {
     video: {
       type: Object,
