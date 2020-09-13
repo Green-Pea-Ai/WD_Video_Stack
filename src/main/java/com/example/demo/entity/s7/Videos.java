@@ -1,3 +1,4 @@
+/*
 package com.example.demo.entity.s7;
 
 import lombok.Builder;
@@ -35,3 +36,4 @@ public class Videos {
         this.title = title;
     }
 }
+*/

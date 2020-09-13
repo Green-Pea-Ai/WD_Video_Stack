@@ -1,6 +1,7 @@
 package com.example.demo.service.s7;
 
 import com.example.demo.entity.s7.VideoBoard;
+import com.example.demo.repository.s7.VideoBoardRepository;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,9 @@ public class VideoBoardServiceImpl implements VideoBoardService {
 
     @Override
     public void registerFromServ(VideoBoard videoBoard) throws Exception {
+        VideoBoard vidEntity = new VideoBoard();
+        vidEntity.setMovTitle(videoBoard.getMovTitle());
+
         repository.create(videoBoard);
     }
 
