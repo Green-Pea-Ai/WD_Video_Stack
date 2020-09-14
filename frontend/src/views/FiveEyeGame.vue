@@ -1,5 +1,6 @@
 <template>
   <!-- 실제로는 오목아니고 삼목 -->
+  <!-- 추가 설명은 Td 컴포넌트 참고 -->
   <div class="FiveEyeGame">
     <div>{{ turn }}님의 턴입니다.</div>
 

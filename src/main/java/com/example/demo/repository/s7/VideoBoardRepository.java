@@ -14,7 +14,7 @@ public interface VideoBoardRepository extends JpaRepository<VideoBoard, Long> {
 
     public List<VideoBoard> findByMovTitle(String movTitle);
 
-    @Query("select vb.videoNo, vb.director, vb.content, vb.regDate from VideoBoard vb")
+    @Query("select vb.videoNo, vb.movTitle, vb.director, vb.content, vb.regDate from VideoBoard vb")
     public List<Object[]> listAllVideoBoard();
 
 }

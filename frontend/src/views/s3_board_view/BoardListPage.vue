@@ -1,6 +1,6 @@
 <template>
   <div id="board">
-    <h2>Board List</h2>
+    <h2>S3 Board List</h2>
     <router-link :to="{ name: 'BoardRegisterPage' }">
       Create New Board
     </router-link>

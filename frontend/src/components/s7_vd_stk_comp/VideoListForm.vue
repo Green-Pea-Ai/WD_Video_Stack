@@ -10,26 +10,9 @@
         <th align="center" width="200">Registration Date</th>
       </tr>
 
-      <tr v-if="!videos || (Array.isArray(videos) && videos.length === 0)">
-        <td colspan="4">
-          List is Empty.
-        </td>
-      </tr>
-
-      <tr v-else v-for="video in videos" :key="video.videoNo">
-        <td align="center">{{ video.videoNo }}</td>
-        <td align="left">
-          <router-link :to="{ name: 'VideoReadPage',
-                  params: { videoNo: video.videoNo.toString() } }">
-            {{ video.movTitle }}
-          </router-link>
-        </td>
-        <td align="right">{{ video.director }}</td>
-        <td align="center">{{ video.regDate }}</td>
-
       <tr v-for="page in paginatedData" :key="page.videoNo">
         <td>{{ page.videoNo }}</td>
-        <td>{{ page.mov_title }}</td>
+        <td>{{ page.movTitle }}</td>
         <td>{{ page.director }}</td>
         <td>{{ page.regDate }}</td>
       </tr>
@@ -83,9 +66,6 @@ export default {
     }
   },
   props: {
-    videos: {
-      type: Array
-    },
     listArray: {
       type: Array,
       required: true
@@ -115,6 +95,7 @@ export default {
       if (listLen % listSize > 0) {
         page += 1
       }
+
       return page
     },
     paginatedData () {

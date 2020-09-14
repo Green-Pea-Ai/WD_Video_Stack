@@ -1,33 +1,22 @@
 <template>
-  <div align="center">
+  <div align="center" id="video">
     <h2>Video Board List</h2>
     <br>
-    <router-link :to="{ name: 'VideoRegisterPage'}">
+    <router-link :to="{ name: 'VideoRegisterPage' }">
       새로운 영화 정보 등록하기
     </router-link>
-    <video-list-page-form :videos="videos"/>
-    <video-list-page-form :list-array="pageArray"/>
+    <video-list-form :list-array="pageArray"/>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import VideoListPageForm from '@/components/s7_vd_stk_comp/VideoListPageForm.vue'
-import { mapState, mapActions } from 'vuex'
+import VideoListForm from '@/components/s7_vd_stk_comp/VideoListForm.vue'
 
 export default {
   name: 'VideoListPage',
   components: {
-    VideoListPageForm
-  },
-  computed: {
-    ...mapState(['videos'])
-  },
-  mounted () {
-    this.fetchVideoList()
-  },
-  methods: {
-    ...mapActions(['fetchVideoList'])
+    VideoListForm
   },
   data () {
     return {
@@ -37,7 +26,7 @@ export default {
   created () {
     // DB 가져오는 코드
     // 아직 사용되지 않은 코드
-    axios.get('http://localhost:7777/videos_data')
+    axios.get('http://localhost:7777/videos')
       .then(res => {
         console.log(res)
         this.pageArray = res.data

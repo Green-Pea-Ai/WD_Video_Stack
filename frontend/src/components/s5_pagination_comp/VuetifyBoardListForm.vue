@@ -2,7 +2,7 @@
   <div>
     <table>
       <tr>
-        <th>No</th>
+        <th>(Old Form)No</th>
         <th>Tel</th>
         <th>Address</th>
         <th>Name</th>

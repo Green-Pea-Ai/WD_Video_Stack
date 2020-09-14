@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <h2>Vuetify Board List</h2>
+    <h2>(Old)Vuetify Board List</h2>
     <vuetify-board-list-form :list-array="pageArray"/>
   </div>
 </template>

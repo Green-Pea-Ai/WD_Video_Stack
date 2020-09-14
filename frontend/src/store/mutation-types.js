@@ -17,7 +17,7 @@ export const SET_FILTER = 'SET_FILTER'
 export const FETCH_BOARD_LIST = 'FETCH_BOARD_LIST'
 export const FETCH_BOARD = 'FETCH_BOARD'
 
-// WD Video Stack Proj
+// WD Video Stack Project
 export const FETCH_VIDEO_LIST = 'FETCH_VIDEO_LIST'
 export const FETCH_VIDEO = 'FETCH_VIDEO'
 
