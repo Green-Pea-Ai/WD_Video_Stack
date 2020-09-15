@@ -1,6 +1,6 @@
 <template>
   <div id="center">
-    <h3>Video Detailed View</h3>
+    <h3>Video Detailed View(test)</h3>
     <table>
       <tr>
         <td>No</td>
