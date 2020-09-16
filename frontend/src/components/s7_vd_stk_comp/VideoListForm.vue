@@ -12,7 +12,12 @@
 
       <tr v-for="page in paginatedData" :key="page.videoNo">
         <td>{{ page.videoNo }}</td>
-        <td>{{ page.movTitle }}</td>
+        <td>
+          <router-link :to="{ name: 'VideoReadPage',
+              params: { videoNo: page.videoNo.toString() } }">
+            {{ page.movTitle }}
+          </router-link>
+        </td>
         <td>{{ page.director }}</td>
         <td>{{ page.regDate }}</td>
       </tr>

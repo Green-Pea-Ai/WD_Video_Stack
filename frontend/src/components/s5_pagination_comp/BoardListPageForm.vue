@@ -12,7 +12,12 @@
 
       <tr v-for="page in paginatedData" :key="page.boardNo">
         <td>{{ page.boardNo }}</td>
-        <td>{{ page.title }}</td>
+        <td>
+          <router-link :to="{ name: 'BoardReadPage',
+                params: { boardNo: page.boardNo.toString() } }">
+            {{ page.title }}
+          </router-link>
+        </td>
         <td>{{ page.writer }}</td>
         <td>{{ page.regDate }}</td>
       </tr>

@@ -3,7 +3,7 @@
     <h2>Video Board List</h2>
     <br>
     <router-link :to="{ name: 'VideoRegisterPage' }">
-      새로운 영화 정보 등록하기
+      [새로운 영화 정보 등록하기]
     </router-link>
     <video-list-form :list-array="pageArray"/>
   </div>
