@@ -185,10 +185,13 @@ const routes = [
     }
   },
   {
-    path: '/video/read',
+    path: '/video/read/:videoNo',
     name: 'VideoReadPage',
     components: {
       default: VideoReadPage
+    },
+    props: {
+      default: true
     }
   },
   {
