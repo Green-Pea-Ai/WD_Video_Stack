@@ -16,7 +16,7 @@
       </tr>
 
       <tr>
-        <td>등록 날짜</td>
+        <td>등록일자</td>
         <td><input type="text" :value="video.regDate" readonly></td>
       </tr>
 

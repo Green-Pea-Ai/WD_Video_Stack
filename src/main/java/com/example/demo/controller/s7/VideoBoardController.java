@@ -1,11 +1,14 @@
 package com.example.demo.controller.s7;
 
 import com.example.demo.entity.s7.VideoBoard;
+import com.example.demo.repository.s7.VideoBoardRepository;
 import com.example.demo.service.s7.VideoBoardService;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -21,6 +24,9 @@ public class VideoBoardController {
     @Autowired
     private VideoBoardService service;
 
+    @Autowired
+    private VideoBoardRepository videoBoardRepository;
+
     @GetMapping("")
     public ResponseEntity<List<VideoBoard>> list() throws Exception {
         log.info("wd list()");
@@ -29,9 +35,12 @@ public class VideoBoardController {
     }
 
     @GetMapping("/{videoNo}")
+    // 비동기 상태로 데이터를 들고오기 때문에 readOnly 속성을 넣어줘야 한다?
+    // 아래 한줄로 read 안되던 것 바로 해결됨
+    @Transactional(readOnly = true)
     public ResponseEntity<VideoBoard> read(
             @PathVariable("videoNo") Long videoNo) throws Exception {
-        log.info("wd read()");
+        log.info("wd read(): " + videoNo);
 
         VideoBoard videoBoard = service.readFromServ(videoNo);
         System.out.println("VideoBoardController: " + videoBoard);
@@ -75,4 +84,12 @@ public class VideoBoardController {
         return new ResponseEntity<>(videoBoard, HttpStatus.OK);
     }
 
+    // Search func
+    @GetMapping("")
+    public List<VideoBoard> findByMovTitle(@PathVariable String movTitle) {
+
+        List<VideoBoard> videoBoard = videoBoardRepository.findByMovTitle(movTitle);
+
+        return videoBoard;
+    }
 }

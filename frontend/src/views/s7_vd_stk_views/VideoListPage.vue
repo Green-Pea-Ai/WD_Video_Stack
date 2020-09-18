@@ -6,17 +6,23 @@
       [새로운 영화 정보 등록하기]
     </router-link>
     <video-list-form :list-array="pageArray"/>
+    <video-search-form/>
+    <main-style-sheet/>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import VideoListForm from '@/components/s7_vd_stk_comp/VideoListForm.vue'
+import VideoSearchForm from '@/components/s7_vd_stk_comp/VideoSearchForm.vue'
+import MainStyleSheet from '@/components/s7_vd_stk_comp/MainStyleSheet.vue'
 
 export default {
   name: 'VideoListPage',
   components: {
-    VideoListForm
+    VideoListForm,
+    VideoSearchForm,
+    MainStyleSheet
   },
   data () {
     return {

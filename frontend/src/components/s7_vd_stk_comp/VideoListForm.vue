@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="listform">
     <br>
     <h3>영상 정보 리스트</h3>
     <table border="1">
@@ -36,7 +36,7 @@
     </div>
 
     <v-app id="inspire">
-      <v-col class="text-center" cols="12" sm="15">
+      <v-col class="listform-btn" cols="12" sm="15">
 
         <v-text-field
           label="제목이나 내용을 입력하여 검색하세요."
@@ -49,12 +49,7 @@
         </div>
 
         <div class="my-2">
-          <v-btn id="vd_upload" v-on:click="$router.push('')" large color="primary">미사용 버튼</v-btn>
-          <br>
-        </div>
-
-        <div class="my-3">
-          <v-btn id="vd_select" v-on:click="clk_vd_select" large>미사용 버튼2</v-btn>
+          <v-btn id="vd_select" v-on:click="clk_vd_select" large>미사용 버튼</v-btn>
         </div>
 
       </v-col>
@@ -112,3 +107,22 @@ export default {
   }
 }
 </script>
+
+<style>
+.listform {
+  max-width: 900px;
+  max-height: 600px;
+  margin-top: 20px;
+  /* margin: auto; */
+  text-align: center;
+  background-color: #E7F288;
+}
+.listform-btn {
+  background-color: #D7FAB9;
+  max-height: 200px;
+}
+/* 검색폼은 여기 없지만 전역으로 쓸 수 있는 것 같다 */
+.search-form {
+  background-color: #A9B2F5;
+}
+</style>

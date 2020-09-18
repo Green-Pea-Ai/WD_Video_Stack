@@ -7,9 +7,11 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
-// Configuration은 설정파일임을 명시하는 부분이다.
+// Configuration은 설정 파일임을 명시하는 부분이다.
 // 몇몇 특정 지정된 키워드들을 제외한 사용자 커스텀 클래스의 경우엔
 // 설정 파일임을 명시해줄 필요성이 있다.
+
+// JPA 쓰려면 설정해줘야 하는 파일(필수)
 @Configuration
 public class DBConfig {
     // Spring 프레임워크에서 관리하는 객체를 Bean이라 한다.
@@ -22,8 +24,8 @@ public class DBConfig {
         dataSource.setUrl(
                 "jdbc:mysql://localhost:3306/testdb?serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false"
         );
-        dataSource.setUsername("root");
-        dataSource.setPassword("qAqR1532!#");
+        dataSource.setUsername("bitai-1212234");
+        dataSource.setPassword("456123-1212234");
 
         return dataSource;
     }

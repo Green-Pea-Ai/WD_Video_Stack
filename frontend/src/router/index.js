@@ -34,7 +34,6 @@ import VideoStackSignUp from '../views/s7_vd_stk_views/VideoStackSignUp.vue'
 // 로그아웃 한다.
 import VideoStackLogin from '../views/s7_vd_stk_views/VideoStackLogin.vue'
 
-// U: 글을 수정할 수 있고
 // D: 글을 삭제할 수 있다.
 // S: 글의 제목, 내용으로 검색할 수 있다.
 // P: 페이지네이션
@@ -44,8 +43,10 @@ import VideoRegisterPage from '../views/s7_vd_stk_views/VideoRegisterPage.vue'
 // R: 글을 읽을 수 있고
 import VideoListPage from '../views/s7_vd_stk_views/VideoListPage.vue'
 import VideoReadPage from '../views/s7_vd_stk_views/VideoReadPage.vue'
-
+// U: 글을 수정할 수 있고
+import VideoModifyPage from '../views/s7_vd_stk_views/VideoModifyPage.vue'
 // 크롤링한 데이터들을 출력하는 페이지이다.
+
 // S: 검색할 수 있다.
 // P: 페이지네이션
 import VideoStackFavorite from '../views/s7_vd_stk_views/VideoStackFavorite.vue'
@@ -116,7 +117,8 @@ const routes = [
       default: BoardModifyPage
     },
     props: {
-      // boolean 모드가 됨, 이 옵션을 설정하면 route.params가 컴포넌트의 props에 자동 설정됨
+      // boolean 모드가 됨
+      // 이 옵션을 설정하면 route.params가 컴포넌트의 props에 자동 설정됨
       default: true
     }
   },
@@ -189,6 +191,16 @@ const routes = [
     name: 'VideoReadPage',
     components: {
       default: VideoReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/video/update/:videoNo',
+    name: 'VideoModifyPage',
+    components: {
+      default: VideoModifyPage
     },
     props: {
       default: true
