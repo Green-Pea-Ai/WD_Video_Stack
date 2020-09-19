@@ -35,31 +35,23 @@
       </button>
     </div>
 
+    <!--
     <v-app id="inspire">
       <v-col class="listform-btn" cols="12" sm="15">
 
-        <v-text-field
-          label="제목이나 내용을 입력하여 검색하세요."
-          single-line
-          outlined
+        <v-text-field label="제목이나 내용을 입력하여 검색하세요."
+          single-line outlined
         ></v-text-field>
-
-        <div class="my-1">
-          <v-btn id="vd_upload" v-on:click="$router.push('VideoStackUpload')" large color="primary">영상 정보 검색</v-btn>
-        </div>
-
-        <div class="my-2">
-          <v-btn id="vd_select" v-on:click="clk_vd_select" large>미사용 버튼</v-btn>
-        </div>
 
       </v-col>
     </v-app>
+    -->
   </div>
 </template>
 
 <script>
 export default {
-  name: 'VideoListPageForm',
+  name: 'VideoListForm',
   data () {
     return {
       pageNum: 0
@@ -117,11 +109,12 @@ export default {
   text-align: center;
   background-color: #E7F288;
 }
+/*
 .listform-btn {
   background-color: #D7FAB9;
   max-height: 200px;
-}
-/* 검색폼은 여기 없지만 전역으로 쓸 수 있는 것 같다 */
+} */
+/* 검색폼(VideoSearchForm)은 여기 없지만 전역으로 쓸 수 있는 것 같다 */
 .search-form {
   background-color: #A9B2F5;
 }

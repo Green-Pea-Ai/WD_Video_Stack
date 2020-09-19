@@ -85,10 +85,10 @@ public class VideoBoardController {
     }
 
     // Search func
-    @GetMapping("")
-    public List<VideoBoard> findByMovTitle(@PathVariable String movTitle) {
+    @GetMapping("/{movTitle}")
+    public List<VideoBoard> findByMovTitleContaining(@PathVariable String movTitle) {
 
-        List<VideoBoard> videoBoard = videoBoardRepository.findByMovTitle(movTitle);
+        List<VideoBoard> videoBoard = videoBoardRepository.findByMovTitleContaining(movTitle);
 
         return videoBoard;
     }

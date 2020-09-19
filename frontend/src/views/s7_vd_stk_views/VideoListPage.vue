@@ -13,6 +13,7 @@
 
 <script>
 import axios from 'axios'
+import { mapState, mapActions } from 'vuex'
 import VideoListForm from '@/components/s7_vd_stk_comp/VideoListForm.vue'
 import VideoSearchForm from '@/components/s7_vd_stk_comp/VideoSearchForm.vue'
 import MainStyleSheet from '@/components/s7_vd_stk_comp/MainStyleSheet.vue'
@@ -31,7 +32,6 @@ export default {
   },
   created () {
     // DB 가져오는 코드
-    // 아직 사용되지 않은 코드
     axios.get('http://localhost:7777/videos')
       .then(res => {
         console.log(res)
@@ -40,6 +40,14 @@ export default {
       .catch(err => {
         console.log(err)
       })
+  },
+  computed: {
+    ...mapState([
+    ])
+  },
+  methods: {
+    ...mapActions([
+    ])
   }
 }
 </script>
