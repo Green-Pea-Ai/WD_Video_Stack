@@ -88,6 +88,9 @@ public class VideoBoardController {
     @GetMapping("/{movTitle}")
     public List<VideoBoard> findByMovTitleContaining(@PathVariable String movTitle) {
 
+        log.info("=========Get, search(movTitle)=========");
+        System.out.println(movTitle);
+
         List<VideoBoard> videoBoard = videoBoardRepository.findByMovTitleContaining(movTitle);
 
         return videoBoard;

@@ -1,6 +1,12 @@
 <template>
-  <div align="center" id="video">
+  <div class="listpage" align="center" id="video">
     <h2>Video Board List</h2>
+    <table>
+      <tr>
+        <td><input type="text" v-model="movTitle" placeholder="영화명 입력"></td>
+        <td><button @click="onVideoSearch">[검색하기]</button></td>
+      </tr>
+    </table>
     <br>
     <router-link :to="{ name: 'VideoRegisterPage' }">
       [새로운 영화 정보 등록하기]
@@ -47,7 +53,27 @@ export default {
   },
   methods: {
     ...mapActions([
-    ])
+    ]),
+    onVideoSearch () {
+      const { movTitle } = this.movTitle
+      axios.get(`http://localhost:7777/videos/${movTitle}`)
+        .then(res => {
+          alert('Video Search Success!')
+          this.$router.push({ name: 'VideoListPage' })
+        })
+        .catch(err => {
+          alert(err.response.data.message)
+        })
+    }
   }
 }
 </script>
+
+<style>
+.listpage {
+  max-width: auto;
+  max-height: auto;
+  margin: auto;
+  background-color: ;
+}
+</style>

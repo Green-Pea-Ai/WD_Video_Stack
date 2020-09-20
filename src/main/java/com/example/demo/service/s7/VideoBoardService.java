@@ -10,4 +10,5 @@ public interface VideoBoardService {
     public void modifyFromServ(VideoBoard videoBoard) throws Exception;
     public void removeFromServ(Long videoBoard) throws Exception;
     public List<VideoBoard> listFromServ() throws Exception;
+
 }
