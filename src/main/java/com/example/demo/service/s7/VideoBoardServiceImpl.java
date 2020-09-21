@@ -81,4 +81,24 @@ public class VideoBoardServiceImpl implements VideoBoardService {
         return videoBoardList;
     }
 
+    // Search func
+    @Override
+    public List<VideoBoard> findByMovTitleContaining(String videoKeyword) throws Exception {
+        List<Object[]> valArrays = repository.findByMovTitleContaining(videoKeyword);
+        List<VideoBoard> videoBoardList = new ArrayList<>();
+
+        for(Object[] valArr : valArrays) {
+            VideoBoard videoBoard = new VideoBoard();
+
+            videoBoard.setVideoNo((Long) valArr[0]);
+            videoBoard.setMovTitle((String) valArr[1]);
+            videoBoard.setDirector((String) valArr[2]);
+            videoBoard.setContent((String) valArr[3]);
+            videoBoard.setRegDate((Date) valArr[4]);
+
+            videoBoardList.add(videoBoard);
+        }
+
+        return videoBoardList;
+    }
 }

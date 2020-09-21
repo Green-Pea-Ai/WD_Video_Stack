@@ -56,7 +56,7 @@ export default {
     ]),
     onVideoSearch () {
       const { movTitle } = this.movTitle
-      axios.get(`http://localhost:7777/videos/${movTitle}`)
+      axios.get(`http://localhost:7777/videos/list/${movTitle}`)
         .then(res => {
           alert('Video Search Success!')
           this.$router.push({ name: 'VideoListPage' })
