@@ -55,11 +55,14 @@ export default {
     ...mapActions([
     ]),
     onVideoSearch () {
-      const { movTitle } = this.movTitle
-      axios.get(`http://localhost:7777/videos/list/${movTitle}`)
+      const movTitle = this.movTitle
+      console.log(movTitle, this.movTitle)
+      axios.get(`http://localhost:7777/videos/search/${movTitle}`)
         .then(res => {
           alert('Video Search Success!')
-          this.$router.push({ name: 'VideoListPage' })
+          console.log('res', res)
+          this.pageArray = res.data
+          // this.$router.push({ name: 'VideoListPage' })
         })
         .catch(err => {
           alert(err.response.data.message)

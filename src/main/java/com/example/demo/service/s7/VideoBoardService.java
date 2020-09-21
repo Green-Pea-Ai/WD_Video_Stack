@@ -11,5 +11,5 @@ public interface VideoBoardService {
     public void removeFromServ(Long videoBoard) throws Exception;
     public List<VideoBoard> listFromServ() throws Exception;
 
-    public List<VideoBoard> findByMovTitleContaining(String videoKeyword) throws Exception;
+    // public List<VideoBoard> findByMovTitleContaining(String videoKeyword) throws Exception;
 }

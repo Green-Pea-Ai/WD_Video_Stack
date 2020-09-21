@@ -16,5 +16,5 @@ public interface VideoBoardRepository extends JpaRepository<VideoBoard, Long> {
                 "where vb.videoNo > 0 order by vb.videoNo desc")
     public List<Object[]> listAllVideoBoard();
 
-    public List<Object[]> findByMovTitleContaining(String videoKeyword);
+    public List<VideoBoard> findByMovTitleContainingOrderByVideoNoDesc(String videoKeyword);
 }

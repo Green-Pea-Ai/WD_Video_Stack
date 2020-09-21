@@ -85,14 +85,15 @@ public class VideoBoardController {
     }
 
     // Search func
-    @GetMapping("/{movTitle}")
+    @GetMapping("/search/{movTitle}")
     public List<VideoBoard> findByMovTitleContaining(@PathVariable("movTitle") String videoKeyword) throws Exception {
 
         log.info("=========Get, search(videoKeyword)=========");
         System.out.println(videoKeyword);
 
-        List<VideoBoard> videoBoard = service.findByMovTitleContaining(videoKeyword);
+        List<VideoBoard> videoBoard = videoBoardRepository.findByMovTitleContainingOrderByVideoNoDesc(videoKeyword);
 
+        System.out.println("videoBoard: " + videoBoard);
         return videoBoard;
     }
 }
