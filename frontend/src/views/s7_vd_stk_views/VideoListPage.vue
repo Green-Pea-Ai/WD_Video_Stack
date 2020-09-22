@@ -11,6 +11,10 @@
     <router-link :to="{ name: 'VideoRegisterPage' }">
       [새로운 영화 정보 등록하기]
     </router-link>
+    <br><br>
+    <router-link :to="{ name: 'VideoStackFavorite' }">
+      [관심 영상 정보 보러가기]
+    </router-link>
     <video-list-form :list-array="pageArray"/>
     <video-search-form/>
     <main-style-sheet/>

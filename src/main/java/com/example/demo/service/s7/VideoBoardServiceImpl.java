@@ -82,7 +82,7 @@ public class VideoBoardServiceImpl implements VideoBoardService {
     }
 
     /*
-    // Search func
+    // Search func, Impl에서 검색 메서드를 만들지 않아도 JPA가 알아서 해준다.
     @Override
     public List<VideoBoard> findByMovTitleContaining(String videoKeyword) throws Exception {
         List<VideoBoard> videoBoards = repository.findByMovTitleContaining(videoKeyword);
