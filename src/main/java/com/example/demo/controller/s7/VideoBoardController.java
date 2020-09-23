@@ -4,6 +4,7 @@ import com.example.demo.controller.MainController;
 import com.example.demo.entity.s7.VideoBoard;
 import com.example.demo.entity.s7.VideoCrawlTable;
 import com.example.demo.repository.s7.VideoBoardRepository;
+import com.example.demo.repository.s7.VideoCrawlRepository;
 import com.example.demo.service.s7.VideoBoardService;
 import lombok.extern.java.Log;
 import org.slf4j.Logger;
@@ -37,6 +38,9 @@ public class VideoBoardController {
     @Autowired
     private VideoBoardRepository videoBoardRepository;
 
+    @Autowired
+    private VideoCrawlRepository videoCrawlRepository;
+
     // 게시판 리스트 출력
     @GetMapping("")
     public ResponseEntity<List<VideoBoard>> list() throws Exception {
@@ -46,6 +50,9 @@ public class VideoBoardController {
     }
 
     // 크롤링 게시판 리스트 출력
+    // 이때는 VideoBoardRepository에 있어도 VideoBoard를 안 갖다써서
+    // 문제없이 써졌지만 크롤 데이터 검색 기능 만들 때 엔티티 참조 오류나서
+    // 크롤 리포지토리 따로 만들었음
     @GetMapping("/crawl")
     public ResponseEntity<List<VideoCrawlTable>> crawlList() throws Exception {
         log.info("wd crawl list()");
@@ -105,7 +112,8 @@ public class VideoBoardController {
 
     // Search func
     @GetMapping("/search/{movTitle}")
-    public List<VideoBoard> findByMovTitleContaining(@PathVariable("movTitle") String videoKeyword) throws Exception {
+    public List<VideoBoard> findByMovTitleContaining(@PathVariable("movTitle") String videoKeyword)
+            throws Exception {
 
         log.info("=========Get, search(videoKeyword)=========");
         System.out.println(videoKeyword);
@@ -114,6 +122,19 @@ public class VideoBoardController {
 
         System.out.println("videoBoard: " + videoBoard);
         return videoBoard;
+    }
+
+    // Crawl Search func, 크롤링
+    @GetMapping("/search/crawl/{youtubeTitle}")
+    public List<VideoCrawlTable> findByYoutubeTitleContainingOrderByYoutubeNoAsc(@PathVariable("youtubeTitle") String youtubeKeyword)
+            throws Exception {
+        log.info("=========Get, crawl search(youtubeTitle)=========");
+        System.out.println(youtubeKeyword);
+
+        List<VideoCrawlTable> videoCrawlTableList = videoCrawlRepository.findByYoutubeTitleContainingOrderByYoutubeNoAsc(youtubeKeyword);
+
+        System.out.println("crawlList: " + videoCrawlTableList);
+        return videoCrawlTableList;
     }
 
     // Flask <-> Spring 통신용

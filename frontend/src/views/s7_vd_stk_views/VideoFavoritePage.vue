@@ -1,10 +1,15 @@
 <template>
-  <div>
+  <div align="center">
     <h2>Video Favorite Crawl List</h2>
       <table>
         <tr>
-          <td>ㄱㄴㄷㄹ</td>
-          <td>ㅁㄴㅇㄹ</td>
+          <!--
+            v-model movTitle을 그대로 써서 웹에서 값을 못받아오고
+            undefined 오류 계속 났었음, 시간버림..
+            복붙은 대체로 피하고 있지만 만약 한다면 항상 주의해서 하자.
+          -->
+          <td><input type="text" v-model="youtubeTitle" placeholder="유튜브 제목 입력"></td>
+          <td><button @click="onCrawlSearch">[크롤링 데이터 검색하기]</button></td>
         </tr>
       </table>
       <br>
@@ -42,6 +47,19 @@ export default {
       })
   },
   methods: {
+    onCrawlSearch () {
+      const youtubeTitle = this.youtubeTitle
+      console.log('wd power: ' + youtubeTitle, this.youtubeTitle)
+      axios.get(`http://localhost:7777/videos/search/crawl/${youtubeTitle}`)
+        .then(res => {
+          alert('Crawl Search Success!')
+          console.log('res', res)
+          this.crawlPageArray = res.data
+        })
+        .catch(err => {
+          alert(err.response.data.message)
+        })
+    }
   }
 }
 </script>

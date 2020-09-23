@@ -3,6 +3,7 @@ package com.example.demo.service.s7;
 import com.example.demo.entity.s7.VideoBoard;
 import com.example.demo.entity.s7.VideoCrawlTable;
 import com.example.demo.repository.s7.VideoBoardRepository;
+import com.example.demo.repository.s7.VideoCrawlRepository;
 import lombok.Data;
 import lombok.extern.java.Log;
 import org.hibernate.Session;
@@ -23,6 +24,9 @@ public class VideoBoardServiceImpl implements VideoBoardService {
     @Autowired
     private VideoBoardRepository repository;
     // private SessionFactory sessionFactory;
+
+    @Autowired
+    private VideoCrawlRepository crawlRepository;
 
     @Override
     public void registerFromServ(VideoBoard videoBoard) throws Exception {
@@ -93,7 +97,7 @@ public class VideoBoardServiceImpl implements VideoBoardService {
 
     @Override
     public List<VideoCrawlTable> crawlListFromServ() throws Exception {
-        List<Object[]> valArrays = repository.listAllVideoCrawlTable();
+        List<Object[]> valArrays = crawlRepository.listAllVideoCrawlTable();
         List<VideoCrawlTable> videoCrawlTables = new ArrayList<>();
 
         for(Object[] valArr: valArrays) {

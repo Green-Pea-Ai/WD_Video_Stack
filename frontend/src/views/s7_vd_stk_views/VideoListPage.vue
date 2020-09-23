@@ -16,7 +16,6 @@
       [관심 영상 정보 보러가기]
     </router-link>
     <video-list-form :list-array="pageArray"/>
-    <video-search-form/>
     <main-style-sheet/>
   </div>
 </template>
@@ -25,14 +24,14 @@
 import axios from 'axios'
 import { mapState, mapActions } from 'vuex'
 import VideoListForm from '@/components/s7_vd_stk_comp/VideoListForm.vue'
-import VideoSearchForm from '@/components/s7_vd_stk_comp/VideoSearchForm.vue'
+// import VideoSearchForm from '@/components/s7_vd_stk_comp/VideoSearchForm.vue'
 import MainStyleSheet from '@/components/s7_vd_stk_comp/MainStyleSheet.vue'
 
 export default {
   name: 'VideoListPage',
   components: {
     VideoListForm,
-    VideoSearchForm,
+    // VideoSearchForm,
     MainStyleSheet
   },
   data () {

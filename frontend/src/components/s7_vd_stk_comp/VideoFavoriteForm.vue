@@ -38,7 +38,7 @@
         <td>{{ page.viewsNum }}</td>
         <td>{{ page.uploadTime }}</td>
         <td>{{ page.crawlingTime }}</td>
-        <td>{{ page.youtubeLink }}</td>
+        <td><a v-bind:href="page.youtubeLink">{{ page.youtubeLink }}</a></td>
       </tr>
     </table>
 
@@ -81,9 +81,13 @@ export default {
       type: Array,
       required: true
     },
+    // 웹페이지 개발도구에서 FavoritePage,
+    // Missing required prop: pageSize 오류 띄움
+    // required를 true -> false로 변경함
+    // 사용한다고 해놓고 사용 안해서 나는 오류인듯하다.
     pageSize: {
       type: Number,
-      required: true,
+      required: false,
       default: 3
     }
   },

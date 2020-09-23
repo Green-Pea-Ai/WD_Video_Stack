@@ -1,6 +1,6 @@
 <template>
   <div class="search-form">
-    <h3>검색 테스트</h3>
+    <h3>검색 테스트(사용 안함)</h3>
 
     <v-app id="inspire">
       <v-col class="search-form" cols="12" sm="15">

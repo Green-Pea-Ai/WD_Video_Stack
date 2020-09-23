@@ -65,7 +65,7 @@ export default {
     },
     pageSize: {
       type: Number,
-      required: true,
+      required: false,
       default: 3
     }
   },
