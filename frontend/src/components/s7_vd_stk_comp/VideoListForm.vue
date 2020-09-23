@@ -1,5 +1,5 @@
 <template>
-    <div class="listform">
+    <div class="list-form">
       <br>
       <h3>영상 정보 리스트</h3>
       <table border="1">
@@ -102,7 +102,7 @@ export default {
 </script>
 
 <style>
-.listform {
+.list-form {
   max-width: auto;
   max-height: auto;
   margin: auto;

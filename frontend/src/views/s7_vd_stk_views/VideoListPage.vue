@@ -1,5 +1,5 @@
 <template>
-  <div class="listpage" align="center" id="video">
+  <div class="list_page" align="center" id="video">
     <h2>Video Board List</h2>
     <table>
       <tr>
@@ -12,7 +12,7 @@
       [새로운 영화 정보 등록하기]
     </router-link>
     <br><br>
-    <router-link :to="{ name: 'VideoStackFavorite' }">
+    <router-link :to="{ name: 'VideoFavoritePage' }">
       [관심 영상 정보 보러가기]
     </router-link>
     <video-list-form :list-array="pageArray"/>
@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style>
-.listpage {
+.list_page {
   max-width: auto;
   max-height: auto;
   margin: auto;

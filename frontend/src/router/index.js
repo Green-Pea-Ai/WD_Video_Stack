@@ -49,7 +49,7 @@ import VideoModifyPage from '../views/s7_vd_stk_views/VideoModifyPage.vue'
 
 // S: 검색할 수 있다.
 // P: 페이지네이션
-import VideoStackFavorite from '../views/s7_vd_stk_views/VideoStackFavorite.vue'
+import VideoFavoritePage from '../views/s7_vd_stk_views/VideoFavoritePage.vue'
 
 Vue.use(VueRouter)
 
@@ -214,10 +214,10 @@ const routes = [
     }
   },
   {
-    path: '/VideoStackFavorite',
-    name: 'VideoStackFavorite',
+    path: '/VideoFavoritePage',
+    name: 'VideoFavoritePage',
     components: {
-      default: VideoStackFavorite
+      default: VideoFavoritePage
     }
   }
 ]

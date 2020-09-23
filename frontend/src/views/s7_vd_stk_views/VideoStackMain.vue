@@ -6,7 +6,7 @@
       [영화 게시판]
     </router-link>
 
-    <router-link :to="{ name: 'VideoStackFavorite'}">
+    <router-link :to="{ name: 'VideoFavoritePage'}">
       [관심 영화 정보]
     </router-link>
     <br><br>

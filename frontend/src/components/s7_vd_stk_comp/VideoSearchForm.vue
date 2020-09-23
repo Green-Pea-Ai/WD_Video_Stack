@@ -1,5 +1,5 @@
 <template>
-  <div class="searchform">
+  <div class="search-form">
     <h3>검색 테스트</h3>
 
     <v-app id="inspire">
@@ -22,7 +22,7 @@
 </template>
 
 <style>
-.searchform {
+.search-form {
   background-color: #FFDADA;
   max-height: 350px;
 }

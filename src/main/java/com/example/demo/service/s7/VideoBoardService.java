@@ -1,6 +1,7 @@
 package com.example.demo.service.s7;
 
 import com.example.demo.entity.s7.VideoBoard;
+import com.example.demo.entity.s7.VideoCrawlTable;
 
 import java.util.List;
 
@@ -12,4 +13,6 @@ public interface VideoBoardService {
     public List<VideoBoard> listFromServ() throws Exception;
 
     // public List<VideoBoard> findByMovTitleContaining(String videoKeyword) throws Exception;
+
+    public List<VideoCrawlTable> crawlListFromServ() throws Exception;
 }

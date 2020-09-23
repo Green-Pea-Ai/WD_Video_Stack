@@ -3,8 +3,8 @@ package com.example.demo.config;
 
 import com.example.demo.security.s4.CustomAccessDeniedHandler;
 import com.example.demo.security.s4.CustomUserDetailsService;
-import com.example.demo.security.JwtAuthenticationFilter;
-import com.example.demo.security.JwtAuthorizationFilter;
+import com.example.demo.security.s4.JwtAuthenticationFilter;
+import com.example.demo.security.s4.JwtAuthorizationFilter;
 import lombok.extern.java.Log;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

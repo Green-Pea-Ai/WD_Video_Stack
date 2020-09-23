@@ -1,6 +1,7 @@
 package com.example.demo.service.s7;
 
 import com.example.demo.entity.s7.VideoBoard;
+import com.example.demo.entity.s7.VideoCrawlTable;
 import com.example.demo.repository.s7.VideoBoardRepository;
 import lombok.Data;
 import lombok.extern.java.Log;
@@ -89,4 +90,29 @@ public class VideoBoardServiceImpl implements VideoBoardService {
 
         return videoBoardList;
     } */
+
+    @Override
+    public List<VideoCrawlTable> crawlListFromServ() throws Exception {
+        List<Object[]> valArrays = repository.listAllVideoCrawlTable();
+        List<VideoCrawlTable> videoCrawlTables = new ArrayList<>();
+
+        for(Object[] valArr: valArrays) {
+            VideoCrawlTable videoCrawlTable = new VideoCrawlTable();
+
+            videoCrawlTable.setYoutubeNo((Long) valArr[0]);
+            videoCrawlTable.setYoutuberName((String) valArr[1]);
+            videoCrawlTable.setYoutubeTitle((String) valArr[2]);
+            videoCrawlTable.setYoutubePlayTime((String) valArr[3]);
+            videoCrawlTable.setSubscribeNum((String) valArr[4]);
+            videoCrawlTable.setViewsNum((String) valArr[5]);
+            videoCrawlTable.setUploadTime((String) valArr[6]);
+            videoCrawlTable.setCrawlingTime((String) valArr[7]);
+            videoCrawlTable.setYoutubeLink((String) valArr[8]);
+
+            videoCrawlTables.add(videoCrawlTable);
+        }
+
+        // List 리턴
+        return videoCrawlTables;
+    }
 }
