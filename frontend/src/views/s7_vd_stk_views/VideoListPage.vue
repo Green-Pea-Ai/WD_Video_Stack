@@ -4,18 +4,18 @@
     <table>
       <tr>
         <td><input type="text" v-model="movTitle" placeholder="영화명 입력"></td>
-        <td><button @click="onVideoSearch">[검색하기]</button></td>
+        <td><button @click="onVideoSearch">[검색]</button></td>
       </tr>
     </table>
     <br>
     <router-link :to="{ name: 'VideoRegisterPage' }">
-      [새로운 영화 정보 등록하기]
+      [영화 정보 등록]
     </router-link>
     <br><br>
     <router-link :to="{ name: 'VideoFavoritePage' }">
-      [관심 영상 정보 보러가기]
+      [관심사 영상 페이지 이동]
     </router-link>
-    <button onclick="window.location.reload()">[페이지 새로고침]</button>
+    <button onclick="window.location.reload()">[새로고침]</button>
     <video-list-form :list-array="pageArray"/>
     <main-style-sheet/>
   </div>

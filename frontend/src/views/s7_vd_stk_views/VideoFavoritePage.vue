@@ -9,14 +9,14 @@
             복붙은 대체로 피하고 있지만 만약 한다면 항상 주의해서 하자.
           -->
           <td><input type="text" v-model="youtubeTitle" placeholder="유튜브 제목 입력"></td>
-          <td><button @click="onCrawlSearch">[크롤링 데이터 검색하기]</button></td>
+          <td><button @click="onCrawlSearch">[크롤링 데이터 검색]</button></td>
         </tr>
       </table>
       <br>
       <router-link :to="{ name: 'VideoListPage'}">
-        [게시판 리스트로 돌아가기]
+        [게시판 페이지 이동]
       </router-link>
-      <button onclick="window.location.reload()">[페이지 새로고침]</button>
+      <button onclick="window.location.reload()">[새로고침]</button>
       <video-favorite-form v-bind:crawl-list-array="crawlPageArray"/>
   </div>
 </template>

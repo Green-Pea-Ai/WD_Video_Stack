@@ -8,11 +8,9 @@
            이용해 사용자 맞춤 카테고리에 대한 영상정보를 표시합니다.</h4>
     -->
 
-    <h1>관심사 영상 리스트</h1><br>
+    <h2>관심사 영상 리스트</h2><br>
     <h4>유튜브 크롤링 데이터 표시</h4>
-    <br>
-    <img src="/home/bitai/Downloads/Mania_favorite1.jpeg" alt="관심사 이미지">
-    <br><br>
+    <!-- <img src="/home/bitai/Downloads/Mania_favorite1.jpeg" alt="관심사 이미지"> -->
     <a href="https://m.blog.naver.com/tamiblue/221723206818?view=img_1">참고 이미지</a>
     <br>
     <br>
@@ -25,7 +23,7 @@
         <th align="center" width="150">Subscribe Num</th>
         <th align="center" width="150">Views Num</th>
         <th align="center" width="150">Upload Time</th>
-        <th align="center" width="130">Crwaling Time</th>
+        <th align="center" width="130">Crawling Time</th>
         <!-- <th align="center" width="130">YouTube Link</th> -->
       </tr>
 
@@ -54,7 +52,7 @@
       </button>
     </div>
     <br>
-
+    <!--
     <table>
       <tr>
         <td><label>엑셀 다운로드하기</label></td>
@@ -62,6 +60,7 @@
         <td><button @click="onCSVFileDownload">[버튼2: Vue에 띄워진 것을 다운로드]</button></td>
       </tr>
     </table>
+    -->
   </div>
 </template>
 
