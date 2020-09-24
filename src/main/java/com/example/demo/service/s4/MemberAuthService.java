@@ -12,7 +12,7 @@ public class MemberAuthService {
     @Autowired
     MemberAuthRepository authRepository;
 
-    public MemberAuth read(Long userNo)  throws  Exception {
+    public MemberAuth read(Long userNo) throws Exception {
         log.info("MemberAuth Service read()");
 
         return authRepository.checkAuth(userNo);

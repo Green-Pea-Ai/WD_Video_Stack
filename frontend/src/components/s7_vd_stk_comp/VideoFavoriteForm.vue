@@ -26,19 +26,19 @@
         <th align="center" width="150">Views Num</th>
         <th align="center" width="150">Upload Time</th>
         <th align="center" width="130">Crwaling Time</th>
-        <th align="center" width="130">YouTube Link</th>
+        <!-- <th align="center" width="130">YouTube Link</th> -->
       </tr>
 
       <tr v-for="page in paginatedCrawlData" :key="page.youtubeNo">
         <td>{{ page.youtubeNo }}</td>
         <td>{{ page.youtuberName }}</td>
-        <td>{{ page.youtubeTitle }}</td>
+        <td><a v-bind:href="page.youtubeLink">{{ page.youtubeTitle }}</a></td>
         <td>{{ page.youtubePlayTime }}</td>
         <td>{{ page.subscribeNum }}</td>
         <td>{{ page.viewsNum }}</td>
         <td>{{ page.uploadTime }}</td>
         <td>{{ page.crawlingTime }}</td>
-        <td><a v-bind:href="page.youtubeLink">{{ page.youtubeLink }}</a></td>
+        <!-- <td><a v-bind:href="page.youtubeLink">{{ page.youtubeLink }}</a></td> -->
       </tr>
     </table>
 

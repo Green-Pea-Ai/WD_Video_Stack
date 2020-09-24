@@ -28,11 +28,12 @@ import CrawlCategory from '../views/s6_crawling_view/CrawlCategory.vue'
 
 // Movie Mania Project
 // 회원가입을 한다.
+import VideoAdminSignUpPage from '../views/s7_vd_stk_views/VideoAdminSignUpPage.vue'
 import VideoStackSignUp from '../views/s7_vd_stk_views/VideoStackSignUp.vue'
 
 // 로그인 한다.
 // 로그아웃 한다.
-import VideoStackLogin from '../views/s7_vd_stk_views/VideoStackLogin.vue'
+import VideoLoginPage from '../views/s7_vd_stk_views/VideoLoginPage.vue'
 
 // D: 글을 삭제할 수 있다.
 // S: 글의 제목, 내용으로 검색할 수 있다.
@@ -173,10 +174,17 @@ const routes = [
     }
   },
   {
-    path: '/VideoStackLogin',
-    name: 'VideoStackLogin',
+    path: '/VideoLoginPage',
+    name: 'VideoLoginPage',
     components: {
-      default: VideoStackLogin
+      default: VideoLoginPage
+    }
+  },
+  {
+    path: '/VideoAdminSignUpPage',
+    name: 'VideoAdminSignUpPage',
+    components: {
+      default: VideoAdminSignUpPage
     }
   },
   {

@@ -16,6 +16,7 @@
       <router-link :to="{ name: 'VideoListPage'}">
         [게시판 리스트로 돌아가기]
       </router-link>
+      <button onclick="window.location.reload()">[페이지 새로고침]</button>
       <video-favorite-form v-bind:crawl-list-array="crawlPageArray"/>
   </div>
 </template>

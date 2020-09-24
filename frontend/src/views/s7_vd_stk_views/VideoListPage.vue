@@ -15,6 +15,7 @@
     <router-link :to="{ name: 'VideoFavoritePage' }">
       [관심 영상 정보 보러가기]
     </router-link>
+    <button onclick="window.location.reload()">[페이지 새로고침]</button>
     <video-list-form :list-array="pageArray"/>
     <main-style-sheet/>
   </div>
