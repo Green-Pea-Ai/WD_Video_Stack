@@ -15,7 +15,7 @@ public interface VideoCrawlRepository extends JpaRepository<VideoCrawlTable, Lon
     //@Query("select * from VideoCrawlTable vct " +
     //        "where vct.youtubeNo > 0 order by vct.youtubeNo asc")
     @Query("select vct.youtubeNo, vct.youtuberName, vct.youtubeTitle, vct.youtubePlayTime, vct.subscribeNum, vct.viewsNum, vct.uploadTime, vct.crawlingTime, vct.youtubeLink from VideoCrawlTable vct " +
-            "where vct.youtubeNo > 0 order by vct.youtubeNo desc")
+            "where vct.youtubeNo > 0 order by vct.youtubeNo asc")
     public List<Object[]> listAllVideoCrawlTable();
 
     // 크롤링 게시판 검색 기능

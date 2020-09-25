@@ -7,21 +7,21 @@
       <h4>카테고리를 직접 설정하거나(off) 데이터 수집후에 맞춤기능 버튼을(on)
            이용해 사용자 맞춤 카테고리에 대한 영상정보를 표시합니다.</h4>
     -->
-
+    <br>
     <h2>관심사 영상 리스트</h2><br>
-    <h4>유튜브 크롤링 데이터 표시</h4>
+    <h4>유튜브 크롤링 데이터 표시</h4><br>
     <!-- <img src="/home/bitai/Downloads/Mania_favorite1.jpeg" alt="관심사 이미지"> -->
     <a href="https://m.blog.naver.com/tamiblue/221723206818?view=img_1">참고 이미지</a>
     <br>
     <br>
     <table border="1">
       <tr>
-        <th align="center" width="80">YouTube No</th>
-        <th align="center" width="180">YouTuber Name</th>
-        <th align="center" width="180">YouTube Title</th>
-        <th align="center" width="150">Play Time</th>
-        <th align="center" width="150">Subscribe Num</th>
-        <th align="center" width="150">Views Num</th>
+        <th align="center" width="100">YouTube No</th>
+        <th align="center" width="130">YouTuber Name</th>
+        <th align="center" width="250">YouTube Title</th>
+        <th align="center" width="100">Play Time</th>
+        <th align="center" width="130">Subscribe Num</th>
+        <th align="center" width="130">Views Num</th>
         <th align="center" width="150">Upload Time</th>
         <th align="center" width="130">Crawling Time</th>
         <!-- <th align="center" width="130">YouTube Link</th> -->
@@ -127,6 +127,6 @@ export default {
   max-width: auto;
   max-height: auto;
   margin: auto;
-  background-color: #FFDADA;
+  background-color: #D0F0C8;
 }
 </style>

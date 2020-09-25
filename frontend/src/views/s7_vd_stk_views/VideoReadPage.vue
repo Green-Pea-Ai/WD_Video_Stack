@@ -2,7 +2,7 @@
   <div id="center">
 
     <h2>Detailed Video Board List(Read)</h2>
-    <video-read-form v-if="video" :video="video"/>
+    <video-read-form v-if="video" :video="video" align="center"/>
     <p v-else>Loading...</p>
     <router-link :to="{ name: 'VideoModifyPage', params: { videoNo } }">
       [Modify]

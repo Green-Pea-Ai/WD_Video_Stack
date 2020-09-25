@@ -8,16 +8,34 @@
       </tr>
     </table>
     <br>
-    <router-link :to="{ name: 'VideoRegisterPage' }">
-      [영화 정보 등록]
-    </router-link>
-    <br><br>
-    <router-link :to="{ name: 'VideoFavoritePage' }">
-      [관심사 영상 페이지 이동]
-    </router-link>
-    <button onclick="window.location.reload()">[새로고침]</button>
-    <video-list-form :list-array="pageArray"/>
-    <main-style-sheet/>
+    <!-- <router-link :to="{ name: 'VideoRegisterPage' }">[영화 정보 등록]</router-link> -->
+    <!-- <router-link :to="{ name: 'VideoFavoritePage' }">[관심사 영상 페이지 이동]</router-link> -->
+
+    <!-- <button onclick="window.location.reload()">[새로고침]</button> -->
+      <v-app>
+        <v-col cols="5" sm="12">
+          <div class="vue-listpage">
+
+            <!--
+            <v-text-field
+              label="영화명 입력"
+              outlined
+            ></v-text-field>
+            <v-btn color="primary" v-model="movTitle" v-on:click="onVideoSearch">검색</v-btn>
+            <br><br>
+            -->
+            <v-btn color="primary" v-bind:to="{ name: 'VideoRegisterPage' }">영화 정보 등록</v-btn>
+            <br><br>
+            <v-btn color="warning" v-bind:to="{ name: 'VideoFavoritePage' }">관심사 영상 페이지 이동</v-btn>
+            <v-btn icon color="green" onclick="window.location.reload()">
+              <v-icon>mdi-cached</v-icon>
+            </v-btn>
+            <video-list-form :list-array="pageArray"/>
+            <main-style-sheet/>
+          </div>
+        </v-col>
+      </v-app>
+
   </div>
 </template>
 
@@ -83,4 +101,5 @@ export default {
   margin: auto;
   background-color: ;
 }
+  * { margin: 0; padding: 0;}
 </style>

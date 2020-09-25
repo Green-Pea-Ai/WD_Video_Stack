@@ -1,5 +1,5 @@
 <template>
-  <div id="center">
+  <div>
     <h3>Video Detailed View(test)</h3>
     <table>
       <!--

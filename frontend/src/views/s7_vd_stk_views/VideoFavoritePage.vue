@@ -1,4 +1,5 @@
 <template>
+  <v-app>
   <div align="center">
     <h2>Video Favorite Crawl List</h2>
       <table>
@@ -9,16 +10,19 @@
             복붙은 대체로 피하고 있지만 만약 한다면 항상 주의해서 하자.
           -->
           <td><input type="text" v-model="youtubeTitle" placeholder="유튜브 제목 입력"></td>
-          <td><button @click="onCrawlSearch">[크롤링 데이터 검색]</button></td>
+          <td><button @click="onCrawlSearch" class="crawl-btn">[크롤링 데이터 검색]</button></td>
         </tr>
       </table>
       <br>
-      <router-link :to="{ name: 'VideoListPage'}">
-        [게시판 페이지 이동]
-      </router-link>
-      <button onclick="window.location.reload()">[새로고침]</button>
+      <!-- <router-link :to="{ name: 'VideoListPage'}">[게시판 페이지 이동]</router-link> -->
+      <!-- <button onclick="window.location.reload()">[새로고침]</button> -->
+      <v-btn color="error" v-bind:to="{ name: 'VideoListPage' }">게시판 페이지 이동</v-btn>
+      <v-btn icon color="green" onclick="window.location.reload()">
+        <v-icon>mdi-cached</v-icon>
+      </v-btn>
       <video-favorite-form v-bind:crawl-list-array="crawlPageArray"/>
   </div>
+  </v-app>
 </template>
 
 <script>
@@ -66,10 +70,7 @@ export default {
 </script>
 
 <style>
-.favorite_page {
-  max-width: auto;
-  max-height: auto;
-  margin: auto;
-  background-color: #FFDADA;
+.crawl-btn {
+  width: 150px;
 }
 </style>

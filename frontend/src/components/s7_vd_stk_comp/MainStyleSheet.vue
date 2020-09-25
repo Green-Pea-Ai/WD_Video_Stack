@@ -21,7 +21,7 @@
 
   td {
     border: 1px solid black;
-    width: 180px;
+    width: 70px;
     height: 80px;
     text-align: center;
   }

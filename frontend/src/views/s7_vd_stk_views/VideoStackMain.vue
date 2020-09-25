@@ -10,8 +10,10 @@
       [관심 영화 정보]
     </router-link>
     <br><br>
-    <button id="login" @click="onClickLogout">
-      [ 로그아웃 ]
-    </button>
+    <!--
+      <button id="login" @click="onClickLogout">
+        [ 로그아웃 ]
+      </button>
+    -->
   </div>
 </template>

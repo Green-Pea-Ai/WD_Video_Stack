@@ -1,7 +1,7 @@
 <template>
   <div id="center">
     <h2>Video Board Modification(Update)</h2>
-    <video-modify-form v-if="video" :video="video" @submit="onSubmit"/>
+    <video-modify-form v-if="video" :video="video" @submit="onSubmit" align="center"/>
     <p v-else>Loading ...</p>
   </div>
 </template>

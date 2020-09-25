@@ -83,7 +83,7 @@
       <button id="login" @click="$router.push('VideoAdminSignUpPage')">
         [ VS Admin 등록 ]
       </button>
-
+<!--
       <br><br>
       <button id="login" @click="$router.push('LoginPage')">
         Login(Old)
@@ -92,7 +92,7 @@
       <button id="login" @click="$router.push('AdminSetupPage')">
         Register Admin(Old)
       </button>
-
+-->
       <router-link :to="{ name: 'Home' }"
           class="nav-link"
           active-class="active">
