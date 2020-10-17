@@ -1,7 +1,5 @@
 <template>
   <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
 
     <div id="header" v-if="isAuthorized">
       <button id="login" @click="onClickLogout">Logout</button>
@@ -18,28 +16,38 @@
         [About Us]
       </router-link>
 
-      <router-link :to="{ name: 'Test' }"
+      <div>
+        <br><span>{{ myinfo.auth }} 계정, 접속을 환영합니다.</span>
+      </div>
+    </div>
+
+    <div id="header" v-else>
+      <button id="login" @click="$router.push('VideoLoginPage')">
+        [ VS 로그인 ]
+      </button>
+      <button id="login" @click="$router.push('VideoAdminSignUpPage')">
+        [ VS Admin 등록 ]
+      </button>
+      <!--
+      <br><br>
+      <button id="login" @click="$router.push('LoginPage')">
+        Login(Old)
+      </button>
+      <br>
+      <button id="login" @click="$router.push('AdminSetupPage')">
+        Register Admin(Old)
+      </button>
+      -->
+      <router-link :to="{ name: 'Home' }"
           class="nav-link"
           active-class="active">
-        [testttt]
+        [Home]
       </router-link>
 
-      <router-link :to="{ name: 'Todo' }"
+      <router-link :to="{ name: 'About' }"
           class="nav-link"
           active-class="active">
-        [Todo exam]
-      </router-link>
-
-      <router-link :to="{ name: 'FiveEyeGame' }"
-          class="nav-link"
-          active-class="active">
-        [FiveEyeGame]
-      </router-link>
-
-      <router-link :to="{ name: 'BoardListPage' }"
-          class="nav-link"
-          active-class="active">
-        [Board!]
+        [About Us]
       </router-link>
 
       <router-link :to="{ name: 'VuetifyBoard' }"
@@ -69,40 +77,6 @@
           class="nav-link"
           active-class="active"><!-- 이전 이름 MovieMania -->
         [Video Stack Main]
-      </router-link>
-
-      <div>
-        <br><span>{{ myinfo.auth }} 계정, 접속을 환영합니다.</span>
-      </div>
-    </div>
-
-    <div id="header" v-else>
-      <button id="login" @click="$router.push('VideoLoginPage')">
-        [ VS 로그인 ]
-      </button>
-      <button id="login" @click="$router.push('VideoAdminSignUpPage')">
-        [ VS Admin 등록 ]
-      </button>
-<!--
-      <br><br>
-      <button id="login" @click="$router.push('LoginPage')">
-        Login(Old)
-      </button>
-      <br>
-      <button id="login" @click="$router.push('AdminSetupPage')">
-        Register Admin(Old)
-      </button>
--->
-      <router-link :to="{ name: 'Home' }"
-          class="nav-link"
-          active-class="active">
-        [Home]
-      </router-link>
-
-      <router-link :to="{ name: 'About' }"
-          class="nav-link"
-          active-class="active">
-        [About Us]
       </router-link>
 
     </div>
