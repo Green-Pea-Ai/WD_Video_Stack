@@ -25,3 +25,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/build/resources/main/application.yaml
+/src/main/resources/application.yaml
+/src/main/java/com/example/demo/config/DBConfig.java
+/build/generated/sources/headers/java/main/com_example_demo_nativeinterface_test_HelloSpring.h
