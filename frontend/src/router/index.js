@@ -2,16 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
-import Test from '../views/Test.vue'
-import Todo from '../views/Todo.vue'
-import FiveEyeGame from '../views/FiveEyeGame.vue'
-// Concave -> 식별이 어려워 FiveEyeGame으로 이름바꿈
-
-// For Cafe Board
-import BoardListPage from '../views/s3_board_view/BoardListPage.vue'
-import BoardRegisterPage from '../views/s3_board_view/BoardRegisterPage.vue'
-import BoardModifyPage from '../views/s3_board_view/BoardModifyPage.vue'
-import BoardReadPage from '../views/s3_board_view/BoardReadPage.vue'
 
 // For Login System
 import LoginPage from '../views/s4_jwt_view/LoginPage.vue'
@@ -68,60 +58,6 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     // component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
-    path: '/test',
-    name: 'Test',
-    component: Test
-  },
-  {
-    path: '/todo',
-    name: 'Todo',
-    component: Todo
-  },
-  {
-    path: '/FiveEyeGame',
-    name: 'FiveEyeGame',
-    components: {
-      default: FiveEyeGame
-    }
-  },
-  {
-    path: '/board',
-    name: 'BoardListPage',
-    components: {
-      default: BoardListPage
-    }
-  },
-  {
-    path: '/board/create',
-    name: 'BoardRegisterPage',
-    components: {
-      default: BoardRegisterPage
-    }
-  },
-  {
-    // boardNo에 :를 넣으면 가변 페이지가 됨
-    path: '/board/:boardNo',
-    name: 'BoardReadPage',
-    components: {
-      default: BoardReadPage
-    },
-    props: {
-      default: true
-    }
-  },
-  {
-    path: '/board/:boardNo/edit',
-    name: 'BoardModifyPage',
-    components: {
-      default: BoardModifyPage
-    },
-    props: {
-      // boolean 모드가 됨
-      // 이 옵션을 설정하면 route.params가 컴포넌트의 props에 자동 설정됨
-      default: true
-    }
   },
   {
     path: '/LoginPage',
