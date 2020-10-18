@@ -1,3 +1,4 @@
+<!--
 <template>
   <div align="center">
     <h2>Register First Administrator</h2>
@@ -36,3 +37,4 @@ export default {
   }
 }
 </script>
+-->

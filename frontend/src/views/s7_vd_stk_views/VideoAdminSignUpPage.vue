@@ -21,7 +21,7 @@ export default {
                   ', ' + payload.userName +
                   ', ' + payload.userPw)
       const { userId, userName, userPw } = payload
-      axios.post('http://localhost:7777/users/setup',
+      axios.post('http://localhost:7777/video_users/setup',
         { userId, userName, userPw })
         .then(res => {
           alert('Register Success')

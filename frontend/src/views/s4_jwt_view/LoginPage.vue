@@ -1,3 +1,4 @@
+<!--
 <template>
   <div align="center">
     <h2>Login</h2>
@@ -29,3 +30,4 @@ export default {
   }
 }
 </script>
+-->

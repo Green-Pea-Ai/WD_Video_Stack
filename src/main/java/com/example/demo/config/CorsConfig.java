@@ -1,3 +1,4 @@
+/*
 // s2의 p2, rand 예제
 package com.example.demo.config;
 
@@ -17,3 +18,4 @@ public class CorsConfig implements WebMvcConfigurer {
                 .allowedOrigins("http://localhost:8080");
     }
 }
+*/

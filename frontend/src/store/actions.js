@@ -111,7 +111,7 @@ export default {
 
       commit(SET_ACCESS_TOKEN, accessToken)
 
-      return axios.get('http://localhost:7777/users/myinfo')
+      return axios.get('http://localhost:7777/video_users/myinfo')
     }).then(res => {
       console.log('After Get Auth Info')
       commit(SET_MY_INFO, res.data)
@@ -119,7 +119,7 @@ export default {
   },
   loginByToken ({ commit }, token) {
     commit(SET_ACCESS_TOKEN, token)
-    return axios.get('http://localhost:7777/users/myinfo')
+    return axios.get('http://localhost:7777/video_users/myinfo')
       .then(res => {
         commit(SET_MY_INFO, res.data)
       })
@@ -129,27 +129,3 @@ export default {
     commit(DESTROY_ACCESS_TOKEN)
   }
 }
-
-// actions: {
-/* generateRandomNumber ({ commit }) {
-    console.log(commit)
-
-    axios.get('http://localhost:7777/random')
-      .then((res) => {
-        commit('successGenRandNum',
-          parseInt(res.data.randNumber))
-      })
-      .catch((res) => {
-        commit('failGenRandNum', res)
-      })
-  },
-  addTodo (context, payload) {
-    context.commit('ADD_TODO', payload)
-  },
-  removeTodo (context, payload) {
-    context.commit('REMOVE_TODO', payload)
-  },
-  clearAll (context, payload) {
-    context.commit('CLEAR_ALL')
-  } */
-// }

@@ -1,3 +1,4 @@
+/*
 package com.example.demo.controller.s4;
 
 import com.example.demo.entity.s4.Member;
@@ -124,3 +125,4 @@ public class MemberController {
         return new ResponseEntity<>(auth, HttpStatus.OK);
     }
 }
+*/

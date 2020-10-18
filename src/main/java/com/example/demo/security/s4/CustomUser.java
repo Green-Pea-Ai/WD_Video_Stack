@@ -1,3 +1,4 @@
+/*
 package com.example.demo.security.s4;
 
 import com.example.demo.entity.s4.Member;
@@ -28,3 +29,4 @@ public class CustomUser extends User {
         return member;
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.example.demo.security.s4;
 
 import lombok.Getter;
@@ -23,3 +24,4 @@ public class ErrorInfoApi implements Serializable {
         return details;
     }
 }
+*/

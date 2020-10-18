@@ -1,3 +1,4 @@
+/*
 package com.example.demo.security.s4;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,7 +16,9 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
                        HttpServletResponse res,
                        AccessDeniedException accessDeniedException)
                             throws IOException, ServletException {
-        /* Error Handling & Info */
+        */
+/* Error Handling & Info *//*
+
         ErrorInfoApi errorInfoApi = new ErrorInfoApi();
         errorInfoApi.setMessage("Access Denied");
 
@@ -28,3 +31,4 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
         res.getWriter().write(jsonString);
     }
 }
+*/

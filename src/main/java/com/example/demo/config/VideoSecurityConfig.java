@@ -1,17 +1,17 @@
-/*
-// s4, JWT(JSON Web Token) 관련 보안처리
 package com.example.demo.config;
 
-import com.example.demo.security.s4.CustomAccessDeniedHandler;
-import com.example.demo.security.s4.CustomUserDetailsService;
-import com.example.demo.security.s4.JwtAuthenticationFilter;
-import com.example.demo.security.s4.JwtAuthorizationFilter;
+
+import com.example.demo.security.s7.VideoCustomAccessDeniedHandler;
+import com.example.demo.security.s7.VideoCustomUserDetailsService;
+import com.example.demo.security.s7.VideoJwtAuthenticationFilter;
+import com.example.demo.security.s7.VideoJwtAuthorizationFilter;
 import lombok.extern.java.Log;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -24,21 +24,19 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 
-// Lombok을 통해 Logger와 LoggerFactory를 자동으로 등록하게 지원한다.
 @Log
-// 웹 보안과 관련된 방어 기능을 활성화시킴
+// 웹 보안 관련 방어 기능 활성화
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class VideoSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(HttpSecurity httpSecurity) throws Exception {
         log.info("Security Configuration!");
 
         // 이 부분을 자세히 파고 들어가면 너무 빡세지니 간단하게만 보면
         // 접근 거부, URL 요청이 올바른지
         // 권한을 가지고 있는지 등등을 설정하는 것이라 보면 됨
-        // (그냥 가져다 쓰도록 한다)
-        http.cors()
+        httpSecurity.cors()
                 .and()
                 .csrf().disable()
                 .exceptionHandling()
@@ -48,30 +46,27 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 // 필터
                 // 커스텀 구간 JwtAuthenticationFilter
-                .addFilter(new JwtAuthenticationFilter(authenticationManager()))
-                // 커스텀 구간 JwtAuthorizationFilter
-                .addFilter(new JwtAuthorizationFilter(authenticationManager()))
-                // 세션 관리
+                .addFilter(new VideoJwtAuthenticationFilter(authenticationManager()))
+                .addFilter(new VideoJwtAuthorizationFilter(authenticationManager()))
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
     // 비밀번호를 암호화 하기 위한 설정
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(createUserDetailsService())
+    protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
+        authenticationManagerBuilder.userDetailsService(createUserDetailsService())
                 .passwordEncoder(createPasswordEncoder());
     }
-
-    @Bean
-    public PasswordEncoder createPasswordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
     // 커스텀 요소 중 하나
     @Bean
     public UserDetailsService createUserDetailsService() {
-        return new CustomUserDetailsService();
+        return new VideoCustomUserDetailsService();
+    }
+    // 커스텀 요소 중 하나
+    @Bean
+    public PasswordEncoder createPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     // 어떠한 형식의 URL 요청이나 Header요청이든 수용하도록 만든다.
@@ -79,20 +74,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public CorsConfigurationSource corsConfigurationSource() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 
-        CorsConfiguration config = new CorsConfiguration();
-        config.setAllowCredentials(true);
-        config.addAllowedOrigin("*");
-        config.addAllowedHeader("*");
-        config.addAllowedMethod("OPTIONS");
-        config.addAllowedMethod("HEAD");
-        config.addAllowedMethod("GET");
-        config.addAllowedMethod("PUT");
-        config.addAllowedMethod("POST");
-        config.addAllowedMethod("DELETE");
-        config.addAllowedMethod("PATCH");
-        config.setExposedHeaders(Arrays.asList("Authorization", "Content-Disposition"));
+        CorsConfiguration corsConfig = new CorsConfiguration();
+        corsConfig.setAllowCredentials(true);
+        corsConfig.addAllowedOrigin("*");
+        corsConfig.addAllowedHeader("*");
+        corsConfig.addAllowedMethod("OPTIONS");
+        corsConfig.addAllowedMethod("HEAD");
+        corsConfig.addAllowedMethod("GET");
+        corsConfig.addAllowedMethod("PUT");
+        corsConfig.addAllowedMethod("POST");
+        corsConfig.addAllowedMethod("DELETE");
+        corsConfig.addAllowedMethod("PATCH");
+        corsConfig.setExposedHeaders(Arrays.asList("Authorization", "Content-Disposition"));
 
-        source.registerCorsConfiguration("/**", config);
+        source.registerCorsConfiguration("/**", corsConfig);
 
         return source;
     }
@@ -101,7 +96,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     // 커스텀 요소 중 하나
     @Bean
     public AccessDeniedHandler createAccessDeniedHandler() {
-        return new CustomAccessDeniedHandler();
+        return new VideoCustomAccessDeniedHandler();
     }
 }
-*/
