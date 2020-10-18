@@ -1,3 +1,4 @@
+/*
 package com.example.demo.security.s4;
 
 import java.util.Date;
@@ -69,3 +70,4 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         response.addHeader(SecurityConstants.TOKEN_HEADER, SecurityConstants.TOKEN_PREFIX + token);
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.example.demo.security.s4;
 
 import com.example.demo.entity.s4.Member;
@@ -26,3 +27,4 @@ public class CustomUserDetailsService implements UserDetailsService {
         return member == null ? null : new CustomUser(member);
     }
 }
+*/

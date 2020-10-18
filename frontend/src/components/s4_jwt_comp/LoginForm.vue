@@ -1,3 +1,4 @@
+<!--
 <template>
    <form @submit.prevent="submit">
       <table>
@@ -38,3 +39,4 @@ export default {
   }
 }
 </script>
+-->

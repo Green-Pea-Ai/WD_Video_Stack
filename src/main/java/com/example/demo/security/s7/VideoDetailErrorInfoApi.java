@@ -1,5 +1,4 @@
-/*
-package com.example.demo.security.s4;
+package com.example.demo.security.s7;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,8 +7,7 @@ import lombok.Getter;
 // 만들게 해주는 롬복 어노테이션 인터페이스
 @AllArgsConstructor
 @Getter
-public class DetailErrorInfoApi {
+public class VideoDetailErrorInfoApi {
     private String target;
-    private String message;
+    private String messageFromVDEIA;
 }
-*/
