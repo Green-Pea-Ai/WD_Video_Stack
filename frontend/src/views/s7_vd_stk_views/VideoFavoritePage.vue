@@ -10,13 +10,18 @@
             복붙은 대체로 피하고 있지만 만약 한다면 항상 주의해서 하자.
           -->
           <td><input type="text" v-model="youtubeTitle" placeholder="유튜브 제목 입력"></td>
-          <td><button @click="onCrawlSearch" class="crawl-btn">[크롤링 데이터 검색]</button></td>
+          <!-- <td><button @click="onCrawlSearch" class="crawl-btn">[크롤링 데이터 검색]</button></td> -->
+          <td>
+            <v-btn @click="onCrawlSearch"
+              color="primary"
+            >크롤링 데이터 검색</v-btn>
+          </td>
         </tr>
       </table>
       <br>
       <!-- <router-link :to="{ name: 'VideoListPage'}">[게시판 페이지 이동]</router-link> -->
       <!-- <button onclick="window.location.reload()">[새로고침]</button> -->
-      <v-btn color="error" v-bind:to="{ name: 'VideoListPage' }">게시판 페이지 이동</v-btn>
+      <v-btn color="warning" v-bind:to="{ name: 'VideoListPage' }">게시판 페이지 이동</v-btn>
       <v-btn icon color="green" onclick="window.location.reload()">
         <v-icon>mdi-cached</v-icon>
       </v-btn>

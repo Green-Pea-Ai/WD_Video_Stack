@@ -7,15 +7,6 @@ import About from '../views/About.vue'
 import LoginPage from '../views/s4_jwt_view/LoginPage.vue'
 import AdminSetupPage from '../views/s4_jwt_view/AdminSetupPage.vue'
 
-// Vuetify
-import VuetifyBoard from '../views/s5_pagination_view/VuetifyBoard.vue'
-
-// Vuetify Board List
-import VuetifyBoardListPage from '../views/s5_pagination_view/VuetifyBoardListPage.vue'
-
-// For Crawling
-import CrawlCategory from '../views/s6_crawling_view/CrawlCategory.vue'
-
 // Movie Mania Project
 // 회원가입을 한다.
 import VideoAdminSignUpPage from '../views/s7_vd_stk_views/VideoAdminSignUpPage.vue'
@@ -71,27 +62,6 @@ const routes = [
     name: 'AdminSetupPage',
     components: {
       default: AdminSetupPage
-    }
-  },
-  {
-    path: '/VuetifyBoard',
-    name: 'VuetifyBoard',
-    components: {
-      default: VuetifyBoard
-    }
-  },
-  {
-    path: '/VuetifyBoardListPage',
-    name: 'VuetifyBoardListPage',
-    components: {
-      default: VuetifyBoardListPage
-    }
-  },
-  {
-    path: '/CrawlCategory',
-    name: 'CrawlCategory',
-    components: {
-      default: CrawlCategory
     }
   },
   {

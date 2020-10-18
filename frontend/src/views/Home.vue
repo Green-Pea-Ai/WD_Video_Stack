@@ -3,41 +3,7 @@
 
     <div id="header" v-if="isAuthorized">
       <button id="login" @click="onClickLogout">Logout</button>
-
-      <router-link :to="{ name: 'Home' }"
-          class="nav-link"
-          active-class="active">
-        [home]
-      </router-link>
-
-      <router-link :to="{ name: 'About' }"
-          class="nav-link"
-          active-class="active">
-        [About Us]
-      </router-link>
-
-      <div>
-        <br><span>{{ myinfo.auth }} 계정, 접속을 환영합니다.</span>
-      </div>
-    </div>
-
-    <div id="header" v-else>
-      <button id="login" @click="$router.push('VideoLoginPage')">
-        [ VS 로그인 ]
-      </button>
-      <button id="login" @click="$router.push('VideoAdminSignUpPage')">
-        [ VS Admin 등록 ]
-      </button>
-      <!--
-      <br><br>
-      <button id="login" @click="$router.push('LoginPage')">
-        Login(Old)
-      </button>
-      <br>
-      <button id="login" @click="$router.push('AdminSetupPage')">
-        Register Admin(Old)
-      </button>
-      -->
+      <br/>
       <router-link :to="{ name: 'Home' }"
           class="nav-link"
           active-class="active">
@@ -47,38 +13,53 @@
       <router-link :to="{ name: 'About' }"
           class="nav-link"
           active-class="active">
-        [About Us]
+        [About]
       </router-link>
-
-      <router-link :to="{ name: 'VuetifyBoard' }"
-          class="nav-link"
-          active-class="active">
-        [VuetifyBoard]
-      </router-link>
-
-      <router-link :to="{ name: 'VuetifyBoardListPage' }"
-          class="nav-link"
-          active-class="active">
-        [VuetifyBoardListPage]
-      </router-link>
-
-    <h2>This is an Home Page</h2>
-      <div id="app">
-        {{ message }}<br>
-      </div>
-
-      <router-link :to="{ name: 'CrawlCategory' }"
-          class="nav-link"
-          active-class="active">
-        [CrawlCategory]
-      </router-link>
-
+      <br/><br/>
       <router-link :to="{ name: 'VideoStackMain' }"
           class="nav-link"
           active-class="active"><!-- 이전 이름 MovieMania -->
         [Video Stack Main]
       </router-link>
 
+      <div>
+        <br><span>{{ myinfo.auth }} 계정, 접속을 환영합니다.</span>
+      </div>
+    </div>
+
+    <div id="header" v-else>
+      <button id="login" @click="$router.push('VideoLoginPage')">
+        [ 로그인 ]
+      </button>
+      <button id="login" @click="$router.push('VideoAdminSignUpPage')">
+        [ Admin 등록 ]
+      </button><br/>
+    <!--
+      <br><br>
+      <button id="login" @click="$router.push('LoginPage')">
+        [Login(Old)]
+      </button>
+      <button id="login" @click="$router.push('AdminSetupPage')">
+        [Register Admin(Old)]
+      </button>
+    -->
+
+      <router-link :to="{ name: 'Home' }"
+          class="nav-link"
+          active-class="active">
+        [Home]
+      </router-link>
+
+      <router-link :to="{ name: 'About' }"
+          class="nav-link"
+          active-class="active">
+        [About]
+      </router-link>
+
+    <h2>VideoStack Home Page</h2><br/>
+      <div id="app">
+        {{ message }}<br>
+      </div>
     </div>
   </div>
 </template>
@@ -104,7 +85,7 @@ export default {
   name: 'Home',
   data: function () {
     return {
-      message: 'Vue Test Message'
+      message: 'Movie Info Community'
     }
   },
   methods: {

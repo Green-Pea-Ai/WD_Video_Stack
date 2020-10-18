@@ -4,14 +4,38 @@
     <h2>Detailed Video Board List(Read)</h2>
     <video-read-form v-if="video" :video="video" align="center"/>
     <p v-else>Loading...</p>
-    <router-link :to="{ name: 'VideoModifyPage', params: { videoNo } }">
-      [Modify]
-    </router-link>
-
-    <button @click="onVideoDelete">[Delete]</button>
-    <router-link :to="{ name: 'VideoListPage'}">
-      [List]
-    </router-link>
+    <v-app>
+      <div>
+        <v-btn
+          v-bind:to="{ name: 'VideoModifyPage', params: { videoNo } }"
+          color="primary"
+          rounded
+        >Modify</v-btn>
+        <v-btn
+          color="#ffffff"
+          x-small
+          elevation="0"
+        ></v-btn>
+        <v-btn @click="onVideoDelete"
+          color="#FF7070"
+          rounded
+        >Delete</v-btn>
+        <br/><br/>
+        <v-btn v-bind:to="{ name: 'VideoListPage' }"
+          color="normal"
+          rounded
+        >List</v-btn>
+        <!--
+          <router-link :to="{ name: 'VideoModifyPage', params: { videoNo } }">
+            [Modify]
+          </router-link>
+          <button @click="onVideoDelete">[Delete]</button>
+          <router-link :to="{ name: 'VideoListPage'}">
+            [List]
+          </router-link>
+        -->
+        </div>
+    </v-app>
 
   </div>
 </template>

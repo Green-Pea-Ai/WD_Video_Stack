@@ -52,6 +52,8 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
+// v-app 흰 배경에 색 넣으려고 작성한 코드
+import styles from './App.css'
 
 export default {
   name: 'App',

@@ -1,6 +1,7 @@
 <template>
   <form @submit.prevent="onSubmit">
     <h3>Video Register Form</h3>
+    <br/>
     <table>
       <tr>
         <td>Movie Title</td>
@@ -17,13 +18,32 @@
         <td><textarea v-model="content" rows="5"></textarea></td>
       </tr>
     </table>
-
-    <div>
-      <button type="submit">[Register]</button>
-      <router-link :to="{ name: 'VideoListPage'}">
-        [Cancel]
-      </router-link>
-    </div>
+    <br/>
+    <v-app>
+      <div>
+          <v-btn
+            type="submit"
+            color="primary"
+            elevation="2"
+            raised
+            rounded
+          >Register</v-btn>
+          <v-btn
+            color="#ffffff"
+            x-small
+            elevation="0"
+          ></v-btn>
+          <v-btn
+            v-bind:to="{ name: 'VideoListPage' }"
+            color="secondary"
+            elevation="2"
+            raised
+            rounded
+          >Cancel</v-btn>
+        <!-- <button type="submit">[Register]</button> -->
+        <!-- <router-link :to="{ name: 'VideoListPage'}">[Cancel]</router-link> -->
+      </div>
+    </v-app>
   </form>
 </template>
 

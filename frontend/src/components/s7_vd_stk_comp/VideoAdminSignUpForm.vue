@@ -1,25 +1,31 @@
 <template>
   <form @submit.prevent="submit">
+    <br/>
     <table>
       <tr>
-        <td>Admin 아이디</td>
+        <td>Admin ID</td>
         <td><input type="text" v-model="userId"></td>
       </tr>
 
       <tr>
-        <td>암호</td>
+        <td>Password</td>
         <td><input type="password" v-model="userPw"></td>
       </tr>
 
       <tr>
-        <td>Admin 이름</td>
+        <td>Admin Name </td>
         <td><input type="text" v-model="userName"></td>
       </tr>
     </table>
-
+    <br/>
+    <v-app>
     <div>
-      <button type="submit">[등록]</button>
+      <v-btn type="submit"
+        color="primary"
+      >등록</v-btn>
+      <!-- <button type="submit">[등록]</button> -->
     </div>
+    </v-app>
   </form>
 </template>
 
