@@ -1,6 +1,9 @@
 <template>
   <div>
-    <h3>Video Detailed View(test)</h3>
+    <br/>
+    <h3>Video Board Read</h3>
+    <h5>(Detailed View)</h5>
+    <br/>
     <table>
       <!--
         videoNo, regDate 등의 데이터들은 axios를 이용하여
@@ -34,6 +37,7 @@
         <td>Content</td>
         <td><textarea :value="video.content" rows="5" readonly></textarea></td>
       </tr>
+      <br/>
     </table>
   </div>
 </template>

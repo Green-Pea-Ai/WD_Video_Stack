@@ -1,7 +1,7 @@
 <template>
     <div class="list-form">
       <br>
-      <h3>영상 정보 리스트</h3>
+      <h3>영화 정보 게시판</h3>
       <table border="1">
         <tr>
           <th align="center" width="80">No</th>

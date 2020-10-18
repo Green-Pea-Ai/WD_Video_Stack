@@ -1,12 +1,7 @@
 <template>
   <div class="list_page" align="center" id="video">
     <h2>Video Board List</h2>
-    <table>
-      <tr>
-        <td><input type="text" v-model="movTitle" placeholder="영화명 입력"></td>
-        <td><button @click="onVideoSearch">[검색]</button></td>
-      </tr>
-    </table>
+
     <br>
     <!-- <router-link :to="{ name: 'VideoRegisterPage' }">[영화 정보 등록]</router-link> -->
     <!-- <router-link :to="{ name: 'VideoFavoritePage' }">[관심사 영상 페이지 이동]</router-link> -->
@@ -24,16 +19,43 @@
             <v-btn color="primary" v-model="movTitle" v-on:click="onVideoSearch">검색</v-btn>
             <br><br>
             -->
-            <v-btn color="primary" v-bind:to="{ name: 'VideoRegisterPage' }">영화 정보 등록</v-btn>
-            <br><br>
-            <v-btn color="warning" v-bind:to="{ name: 'VideoFavoritePage' }">관심사 영상 페이지 이동</v-btn>
-            <v-btn icon color="green" onclick="window.location.reload()">
+            <v-btn color="primary"
+              v-bind:to="{ name: 'VideoRegisterPage' }"
+            >영화 정보 등록</v-btn>
+            <v-btn color="#ffffff" x-small elevation="0"></v-btn>
+            <v-btn color="warning"
+              v-bind:to="{ name: 'VideoFavoritePage' }"
+            >관심사 영상 페이지 이동</v-btn>
+            <v-btn color="#ffffff" x-small elevation="0"></v-btn>
+            <!-- 페이지 새로고침 -->
+            <v-btn icon color="green"
+              onclick="window.location.reload()"
+            >
               <v-icon>mdi-cached</v-icon>
             </v-btn>
+
             <video-list-form :list-array="pageArray"/>
             <main-style-sheet/>
           </div>
         </v-col>
+
+        <div>
+          <table>
+            <tr>
+              <td><input type="text" v-model="movTitle" placeholder="영화명 입력"></td>
+              <!-- <td><button @click="onVideoSearch">[검색]</button></td> -->
+              <td>
+                <v-btn @click="onVideoSearch"
+                  color="primary"
+                >검색</v-btn>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </v-app>
+
+      <v-app>
+
       </v-app>
 
   </div>
@@ -101,5 +123,6 @@ export default {
   margin: auto;
   background-color: ;
 }
+  // 브라우저에서 기본 설정된 모든 태그의 레이아웃 설정값 초기화
   * { margin: 0; padding: 0;}
 </style>

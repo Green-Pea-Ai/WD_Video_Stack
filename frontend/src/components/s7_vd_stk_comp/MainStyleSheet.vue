@@ -21,8 +21,9 @@
 
   td {
     border: 1px solid black;
-    width: 70px;
-    height: 80px;
+    width: 120px;
+    height: 70px;
     text-align: center;
   }
+
 </style>

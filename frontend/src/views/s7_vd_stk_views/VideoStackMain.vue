@@ -1,7 +1,7 @@
 <template>
   <div align="center">
     <h1>VideoStack Main Page(Beta)</h1>
-    <br>
+    <br/><br/>
     <router-link :to="{ name: 'VideoListPage'}">
       [영화 게시판]
     </router-link>

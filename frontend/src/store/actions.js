@@ -28,24 +28,7 @@ import axios from 'axios'
 import router from '../router'
 
 export default {
-  // 양이 많을 수 있어서 crawlFind 비동기처리 해줌
-  async crawlFind ({ commit }, category) {
-    axios.get('http://localhost:7777/' + `${category}`)
-      .then(({ data }) => {
-        commit('CRAWL_START', data)
-        if (window.location.pathname !== '/CrawlCategory') {
-          router.push('/CrawlCategory')
-        }
-      })
-  },
-  async crawlFindOne ({ commit }, newsNo) {
-    axios.get('http://localhost:7777/news/' + `${newsNo}`)
-      .then(({ data }) => {
-        console.log('/news/newsNo res: ' + data)
-        commit('FIND_ONE', data)
-        router.push('/CrawlCategory/news')
-      })
-  },
+
   fetchBoardList ({ commit }) {
     return axios.get('http://localhost:7777/boards')
       .then(res => {

@@ -10,10 +10,7 @@
     <br>
     <h2>관심사 영상 리스트</h2><br>
     <h4>유튜브 크롤링 데이터 표시</h4><br>
-    <!-- <img src="/home/bitai/Downloads/Mania_favorite1.jpeg" alt="관심사 이미지"> -->
-    <a href="https://m.blog.naver.com/tamiblue/221723206818?view=img_1">참고 이미지</a>
-    <br>
-    <br>
+    <!--<img src="/home/bitai/Downloads/Mania_favorite1.jpeg" alt="관심사 이미지">-->
     <table border="1">
       <tr>
         <th align="center" width="100">YouTube No</th>

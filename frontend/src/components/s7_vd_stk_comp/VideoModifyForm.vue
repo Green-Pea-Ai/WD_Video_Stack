@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h3>Video Board 항목 수정하기</h3>
-
+    <br/>
+    <h3>Video Board Modify</h3>
+    <br/>
       <form @submit.prevent="onSubmit">
         <table>
           <tr>
@@ -29,14 +30,33 @@
             <td><textarea v-model="content" rows="5"></textarea></td>
           </tr>
         </table>
-
-        <div>
-          <button type="submit">[수정하기]</button>
-          <router-link :to="{ name: 'VideoReadPage',
-            params: { videoNo: video.videoNo.toString() } }">
-            [취소]
-          </router-link>
-        </div>
+        <br/>
+        <v-app>
+          <div>
+            <v-btn
+              type="submit"
+              color="primary"
+              rounded
+            >Modify</v-btn>
+            <v-btn
+              color="#ffffff"
+              x-small
+              elevation="0"
+            ></v-btn>
+            <v-btn
+              v-bind:to="{ name: 'VideoReadPage',
+                params: { videoNo: video.videoNo.toString() } }"
+              rounded
+            >Cancel</v-btn>
+            <!--
+              <button type="submit">[Modify]</button>
+              <router-link :to="{ name: 'VideoReadPage',
+                params: { videoNo: video.videoNo.toString() } }">
+                [Cancel]
+              </router-link>
+            -->
+          </div>
+        </v-app>
       </form>
   </div>
 </template>
