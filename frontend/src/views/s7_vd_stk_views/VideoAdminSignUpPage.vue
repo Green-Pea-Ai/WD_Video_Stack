@@ -1,3 +1,4 @@
+<!-- Admin Setup -->
 <template>
   <div align="center">
     <h2>관리자 등록 페이지(VS admin)</h2>

@@ -12,7 +12,7 @@
         res.data에는 video의 Entity 값들이 담겨있다.
 
         video.videoNo의 video는 states에 있는 video이다.
-       -->
+      -->
       <tr>
         <td>No</td>
         <td><input type="text" :value="video.videoNo" readonly></td>

@@ -1,6 +1,6 @@
 package com.example.demo.controller.s7;
 
-import com.example.demo.entity.s4.Member;
+// import com.example.demo.entity.s4.Member;
 import com.example.demo.entity.s7.VideoMember;
 import com.example.demo.entity.s7.VideoMemberAuth;
 import com.example.demo.security.s7.VideoAuthUtil;
