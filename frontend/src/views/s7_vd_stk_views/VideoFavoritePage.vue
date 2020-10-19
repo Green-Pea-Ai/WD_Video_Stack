@@ -2,6 +2,7 @@
   <v-app>
   <div align="center">
     <h2>Video Favorite Crawl List</h2>
+    <br/>
       <table>
         <tr>
           <!--
