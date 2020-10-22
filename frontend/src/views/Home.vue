@@ -33,7 +33,7 @@
       </button>
       <button id="login" @click="$router.push('VideoAdminSignUpPage')">
         [ Admin 등록 ]
-      </button><br/>
+      </button><br/><br/>
     <!--
       <br><br>
       <button id="login" @click="$router.push('LoginPage')">
