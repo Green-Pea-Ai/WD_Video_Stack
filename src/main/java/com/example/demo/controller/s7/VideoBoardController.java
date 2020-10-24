@@ -1,6 +1,6 @@
 package com.example.demo.controller.s7;
 
-import com.example.demo.controller.MainController;
+// import com.example.demo.controller.MainController; // @Controller 관련 수업했던 클래스
 import com.example.demo.entity.s7.VideoBoard;
 import com.example.demo.entity.s7.VideoCrawlTable;
 import com.example.demo.repository.s7.VideoBoardRepository;
