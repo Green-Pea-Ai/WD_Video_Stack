@@ -1,4 +1,0 @@
-See file:///home/bitai/Downloads/SpringExamples-master/build/tmp/compileHelloSharedLibraryHelloC/output.txt for all output for compileHelloSharedLibraryHelloC.
-compiling hello.c successful.
-
-Finished compileHelloSharedLibraryHelloC, see full log file:///home/bitai/Downloads/SpringExamples-master/build/tmp/compileHelloSharedLibraryHelloC/output.txt.
